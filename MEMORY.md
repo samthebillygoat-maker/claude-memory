@@ -4,7 +4,7 @@
 - [About Me](Areas/About Me.md) — non-technical, Windows 11, entrepreneurial, action-oriented, brief communicator, wants Claude to ask questions before diving in
 
 ## Projects
-- [Miami Airbnb Arbitrage](Projects/Miami Airbnb Arbitrage.md) — building Miami Airbnb arbitrage business, sign lease ASAP, tool at C:\Users\samth\miami-arbitrage
+- [Miami Airbnb Arbitrage](Projects/Miami Airbnb Arbitrage.md) — City Side Stays (citysidestays.com), Miami Airbnb arbitrage, sign lease ASAP, tool at C:\Users\samth\miami-arbitrage
 - [Hiring Tool](Projects/Hiring Tool.md) — Gmail-based resume screener, planning stage
 - [Customs Consulting Assistant](Projects/Customs Consulting Assistant.md) — multi-agency compliance tool, planning stage
 
