@@ -11,10 +11,14 @@
             "id": "home",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Daily Notes/2026-04-22.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-22"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Daily Notes/2026-04-22.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 2026-04-22"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Daily Notes/2026-04-22.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from 2026-04-22"
             }
           },
           {
@@ -150,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Daily Notes/2026-04-22.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2026-04-22"
             }
           }
         ]
@@ -178,7 +185,19 @@
   },
   "active": "home",
   "lastOpenFiles": [
+    "Projects/Miami Airbnb Arbitrage.md",
+    "Projects/Customs Consulting Assistant.md",
+    "SOPs/Miami - Guest Check-In.md",
+    "SOPs/Miami - Pricing Review.md",
+    "Templates/Property Lead.md",
+    "Templates/Vendor.md",
+    "Templates/Weekly Review.md",
+    "Contacts/Landlords/README.md",
+    "Contacts/Customs Clients/README.md",
     "Home.md",
+    "Inbox.md",
+    "Wins.md",
+    "MEMORY.md",
     "Daily Notes/2026-04-22.md",
     "Daily Notes",
     "CLAUDE.md",
@@ -186,12 +205,8 @@
     "SOPs/Miami - Cleaning Turnover.md",
     "SOPs/Customs - New Client Onboarding.md",
     "SOPs/Customs - Compliance Review.md",
-    "Templates/Vendor.md",
-    "Templates/Property Lead.md",
     "Templates/Landlord.md",
     "Templates/Customs Client.md",
-    "SOPs/Miami - Pricing Review.md",
-    "SOPs/Miami - Guest Check-In.md",
     "SOPs/Customs - Entry Filing.md",
     "Properties/README.md",
     "Properties",
@@ -199,9 +214,7 @@
     "Contacts/Vendors",
     "Contacts/Partners/README.md",
     "Contacts/Partners",
-    "Contacts/Landlords/README.md",
     "Contacts/Landlords",
-    "Contacts/Customs Clients/README.md",
     "Contacts/Customs Clients"
   ]
 }
