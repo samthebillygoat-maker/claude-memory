@@ -12,20 +12,24 @@
 
 ---
 
-## 📥 New Ideas
-
-Dump anything new here → [[Inbox]]
-
----
-
 ## 🗂️ Your Brain
 
 | Section | What lives here |
 |---------|----------------|
-| [[Projects/Miami Airbnb Arbitrage\|📁 Projects]] | Active work with deadlines and outcomes |
-| [[Areas/About Me\|🗺️ Areas]] | Ongoing responsibilities — business, life |
-| [[Resources/Miami STR Intelligence\|📚 Resources]] | Research, intel, reference material |
-| Archive | Completed or paused work |
+| [[Projects/Miami Airbnb Arbitrage\|📁 Projects]] | Active work with deadlines |
+| [[Areas/Goals\|🎯 Goals]] | Short and long term targets |
+| [[Areas/Finances\|💰 Finances]] | Income, expenses, ROI |
+| [[Areas/Habits\|✅ Habits]] | Daily and weekly habits |
+| [[Areas/About Me\|👤 About Me]] | Your profile |
+| [[Areas/Customs Business\|🚢 Customs Business]] | Your brokerage business |
+| [[Ideas\|💡 Ideas]] | Raw ideas, no filter |
+| [[Wins\|🏆 Wins]] | Every win logged |
+| [[Contacts/README\|📇 Contacts]] | Key people |
+| [[Learning/README\|📚 Learning]] | Books, courses, articles |
+| [[SOPs/README\|⚙️ SOPs]] | How things get done |
+| [[Resources/Miami STR Intelligence\|📚 Resources]] | Research & intel |
+| [[Inbox\|📥 Inbox]] | Dump anything new here |
+| Archive | Completed / paused work |
 
 ---
 
