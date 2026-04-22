@@ -1,28 +1,21 @@
 # 📇 Contacts
 
-One note per person. Use the template below.
+---
+
+## Sections
+
+| Folder | Who's in it |
+|---|---|
+| [[Contacts/Landlords/README\|🏠 Landlords]] | Property owners you're negotiating with for Miami |
+| [[Contacts/Vendors/README\|🔧 Vendors]] | Cleaners, furnishing suppliers, maintenance, photographers |
+| [[Contacts/Customs Clients/README\|🚢 Customs Clients]] | Your brokerage clients |
+| [[Contacts/Partners/README\|🤝 Partners]] | Co-hosts, referral partners, brokers |
 
 ---
 
-## How to Use
+## Templates
 
-Create a new file in this folder for each contact.
-Name it: `First Last.md`
-
----
-
-## Template
-
-```
-# [Name]
-
-**Role:** 
-**Company:** 
-**Phone:** 
-**Email:** 
-**Met:** 
-
-## Notes
-
-## History
-```
+- [[Templates/Landlord]] — for Miami property owners
+- [[Templates/Vendor]] — for service providers
+- [[Templates/Customs Client]] — for brokerage clients
+- [[Templates/Contact]] — generic contact
