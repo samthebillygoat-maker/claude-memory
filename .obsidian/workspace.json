@@ -211,14 +211,14 @@
         "direction": "vertical",
         "x": 1853,
         "y": -1080,
-        "width": 512,
-        "height": 730,
+        "width": 410,
+        "height": 585,
         "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "home",
+  "active": "034fb87a34ff1bc5",
   "lastOpenFiles": [
     "Daily Notes/2026-04-22.md",
     "Untitled.canvas",

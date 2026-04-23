@@ -4,14 +4,14 @@
 
 ## 🔥 Mission
 
-Build multiple cash-flowing businesses that run without you — Miami Airbnb arbitrage for passive income, customs brokerage as the core business engine.
+Build multiple cash-flowing businesses that run without you — STR arbitrage nationally (not just Miami) for passive income, customs brokerage as the core business engine.
 
 ---
 
-## Goal 1 — Sign First Miami Lease
+## Goal 1 — Sign First STR Lease (National)
 
 **Target:** ASAP
-**Status:** Active
+**Status:** Active — expanded from Miami-only to national (266 markets in DealScout)
 
 ### Milestones
 - [ ] Run 10+ properties through Address Analyzer in the tool
@@ -80,7 +80,7 @@ Build multiple cash-flowing businesses that run without you — Miami Airbnb arb
 
 ---
 
-## Goal 5 — Scale to 3 Miami Units
+## Goal 5 — Scale to 3+ Units Nationally
 
 **Target:** End of 2026
 **Status:** Future
@@ -89,9 +89,10 @@ Build multiple cash-flowing businesses that run without you — Miami Airbnb arb
 - [ ] Unit 1 profitable for 60+ days
 - [ ] Systemize operations with SOPs
 - [ ] Hire cleaner / co-host
-- [ ] Sign Unit 2 lease
+- [ ] Sign Unit 2 lease (different market)
 - [ ] Sign Unit 3 lease
 - [ ] Automate pricing, messaging, reviews
+- [ ] Cold caller running on autopilot — ElevenLabs agent pitching landlords daily
 
 ---
 
