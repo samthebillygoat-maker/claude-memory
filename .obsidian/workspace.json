@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "new_learnings.md",
+                "file": "Ideas.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "new_learnings"
+              "title": "Ideas"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "new_learnings.md",
+                "file": "Ideas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for new_learnings"
+              "title": "Backlinks for Ideas"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "new_learnings.md",
+                "file": "Ideas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from new_learnings"
+              "title": "Outgoing links from Ideas"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "new_learnings.md",
+                "file": "Ideas.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of new_learnings"
+              "title": "Outline of Ideas"
             }
           }
         ]
@@ -224,8 +224,10 @@
   },
   "active": "home",
   "lastOpenFiles": [
-    "Daily Notes/2026-04-22.md",
+    "Inbox.md",
+    "MEMORY.md",
     "new_learnings.md",
+    "Daily Notes/2026-04-22.md",
     "Learning/README.md",
     "Projects/Miami Airbnb Arbitrage.md",
     "Projects/Customs Consulting Assistant.md",
@@ -237,9 +239,7 @@
     "Contacts/Landlords/README.md",
     "Contacts/Customs Clients/README.md",
     "Home.md",
-    "Inbox.md",
     "Wins.md",
-    "MEMORY.md",
     "Daily Notes",
     "CLAUDE.md",
     "Resources/Miami STR Intelligence.md",
