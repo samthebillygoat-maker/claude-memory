@@ -84,4 +84,34 @@ Updates on tools and APIs used across all projects.
 
 ---
 
-*Last updated from research-scout: April 21, 2026*
+---
+
+## Twilio + ElevenLabs Cold Caller Stack
+
+**How it works:**
+1. Flask `server.py` receives call trigger from Streamlit
+2. Twilio dials landlord via REST API (`calls.create`)
+3. When landlord answers, Twilio webhook returns TwiML with `<Connect><Stream>` to ElevenLabs
+4. ElevenLabs WebSocket handles the AI conversation
+5. A second `<Stream>` forks audio to our server for live monitoring
+
+**Critical:** ElevenLabs API key must be in the WebSocket URL as query param (`?xi-api-key=...`) — Twilio doesn't support custom WebSocket headers. Missing this causes hang-up after a few words.
+
+**ngrok** required to expose Flask server to Twilio (Twilio needs a public URL).  
+ngrok exe: `C:\Users\samth\miami-arbitrage\ngrok.exe`  
+ngrok authtoken: configured locally  
+Flask runs on port 5001.
+
+---
+
+## Playwright (installed)
+
+Used in DealScout for:
+- AirDNA Rentalizer auto-pull (`scripts/airdna_scraper.py`)
+- Phone number scraping from listing pages (`pages/9_🏘️_Listing_Scout.py`)
+
+Install: `pip install playwright` + `playwright install chromium`
+
+---
+
+*Last updated: April 22, 2026*
