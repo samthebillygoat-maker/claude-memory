@@ -11,10 +11,14 @@
             "id": "home",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Daily Notes/2026-04-23.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-23"
             }
           }
         ]
@@ -218,10 +222,10 @@
       }
     ]
   },
-  "active": "034fb87a34ff1bc5",
+  "active": "home",
   "lastOpenFiles": [
-    "Daily Notes/2026-04-23.md",
     "Daily Notes/2026-04-22.md",
+    "Daily Notes/2026-04-23.md",
     "Untitled.canvas",
     "Ideas.md",
     "Inbox.md",
