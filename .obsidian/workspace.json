@@ -11,10 +11,14 @@
             "id": "home",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Areas/Goals.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Goals"
             }
           }
         ]
@@ -211,8 +215,8 @@
         "direction": "vertical",
         "x": 1853,
         "y": -1080,
-        "width": 410,
-        "height": 585,
+        "width": 329,
+        "height": 469,
         "maximize": false,
         "zoom": 0
       }
@@ -220,6 +224,11 @@
   },
   "active": "home",
   "lastOpenFiles": [
+    "Daily Notes/2026-04-24.md",
+    "Areas/Finances.md",
+    "Areas/Customs Business.md",
+    "Areas/About Me.md",
+    "Contacts/Vendors/README.md",
     "Daily Notes/2026-04-23.md",
     "Daily Notes/2026-04-22.md",
     "Untitled.canvas",
@@ -243,11 +252,6 @@
     "CLAUDE.md",
     "Resources/Miami STR Intelligence.md",
     "SOPs/Miami - Cleaning Turnover.md",
-    "SOPs/Customs - New Client Onboarding.md",
-    "SOPs/Customs - Compliance Review.md",
-    "Templates/Landlord.md",
-    "Templates/Customs Client.md",
-    "SOPs/Customs - Entry Filing.md",
     "Properties",
     "Contacts/Vendors",
     "Contacts/Partners",
