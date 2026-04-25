@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Goals.md",
+                "file": "Daily Notes/2026-04-24.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Goals"
+              "title": "2026-04-24"
             }
           }
         ]
@@ -224,12 +224,15 @@
   },
   "active": "home",
   "lastOpenFiles": [
+    "Resources/Lead Sourcing.md",
+    "Projects/ElevenLabs Batch Calling.md",
+    "Daily Notes/2026-04-23.md",
+    "Areas/Goals.md",
     "Daily Notes/2026-04-24.md",
     "Areas/Finances.md",
     "Areas/Customs Business.md",
     "Areas/About Me.md",
     "Contacts/Vendors/README.md",
-    "Daily Notes/2026-04-23.md",
     "Daily Notes/2026-04-22.md",
     "Untitled.canvas",
     "Ideas.md",
@@ -249,9 +252,6 @@
     "Home.md",
     "Wins.md",
     "Daily Notes",
-    "CLAUDE.md",
-    "Resources/Miami STR Intelligence.md",
-    "SOPs/Miami - Cleaning Turnover.md",
     "Properties",
     "Contacts/Vendors",
     "Contacts/Partners",

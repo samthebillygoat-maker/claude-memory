@@ -47,7 +47,7 @@ Opens at http://localhost:8501
 
 ### Key Data Files
 ```
-data/scraper.py         — 266 national markets (MARKET dict) — single source of truth
+data/scraper.py         — 532 national markets (MARKET dict) — single source of truth
 data/neighborhoods.py   — Miami neighborhood rates/occupancy
 data/seasonal.py        — monthly demand factors
 data/furnishing.py      — furnishing items by tier
@@ -102,24 +102,34 @@ streamlit run app.py
 - **📼 Recording** — auto-records every call, playback inline after call ends
 - **Auto-marks lead** as `📞 Called` in pipeline after dialing
 
-### Known Issue (as of April 22, 2026)
+### Known Issue (as of April 24, 2026 — still unresolved)
 ElevenLabs workflow has broken `voicemail_detection` tool reference in **Leave Voicemail** node → causes "Documents with ids not found" error mid-call.  
-**Fix:** Go to ElevenLabs → Agent → Workflow → click Leave Voicemail node → remove broken tool reference
+**Fix:** ElevenLabs → agent `agent_4801kpp6506efqhv1n4v62w555bs` → Workflow → Leave Voicemail node → remove broken tool reference
 
 ### ElevenLabs Agent Variables
-- `{{city}}` — target city name
-- `{{callback_number}}` — 9254098490
-- `{{number_of_units}}` — fill in before calling (e.g. 3)
+- `{{city}}` — target city name (populated from CSV per row)
+- `{{callback_number}}` — 9254098490 (hardcoded in agent)
+- `{{number_of_units}}` — 5 (set in CSV column)
 
 ---
 
 ## Phone Number Sourcing
 
-**RentCast** returns `listingAgent.phone` and `listingOffice.phone` — these are the agent/property manager numbers.  
-**Craigslist** — phones hidden behind login wall; Playwright scraper tries to extract from body text  
-**Manual entry** — enter phone per listing in Listing Scout, saved to pipeline
+**Best source:** RentCast API → `listingAgent.phone` + `listingOffice.phone`  
+**Skip trace:** batchskiptracing.com (free credits for new accounts) — for markets where RentCast has no phones  
+**Craigslist:** mostly useless — phones hidden behind JS, spam farms embed fake +1792 numbers  
+**Manual entry:** enter phone per listing in Listing Scout, saved to pipeline
 
-**RentCast API key:** stored in DealScout → Listing Scout → API Keys section
+**⚠️ +1792 area code = fake** — not a real US area code. Any list with lots of 792 numbers is Craigslist spam. Trash it.
+
+See [[Resources/Lead Sourcing]] for full sourcing guide and results history.
+
+**RentCast API key:** `0e394cd1cacc42fab97b2246027802ea` (also stored in DealScout settings)
+
+## Batch Cold Calling
+
+207 real landlord numbers collected April 24 — ready to call via ElevenLabs batch.  
+See [[Projects/ElevenLabs Batch Calling]] for full workflow, CSV format, and known issues.
 
 ---
 

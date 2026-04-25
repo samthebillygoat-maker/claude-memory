@@ -114,4 +114,43 @@ Install: `pip install playwright` + `playwright install chromium`
 
 ---
 
-*Last updated: April 22, 2026*
+---
+
+## batch_national_scrape.py — Updates (April 24, 2026)
+
+**File:** `C:\Users\samth\miami-arbitrage\scripts\batch_national_scrape.py`
+
+Changes made today:
+- `TARGET` set to 200
+- Blocked area code `792` in `normalize_phone()` — fake Craigslist spam numbers
+- `TOP_MARKETS` cap raised to 120
+- ElevenLabs CSV now includes `number_of_units` column (value = 5)
+- Searched all 532 markets in a single run → 207 phones in 17 API calls
+
+**Run to get fresh leads:**
+```
+cd C:\Users\samth\miami-arbitrage
+python scripts/batch_national_scrape.py
+```
+
+Outputs to `Downloads/national_leads_phones.csv` and `Downloads/national_leads_elevenlabs.csv`
+
+---
+
+## ElevenLabs Batch Calling — CSV Format
+
+```csv
+phone_number,city,number_of_units
++17863290972,Miami,5
+```
+
+- Phone must be E.164: `+1` + 10 digits, no spaces
+- Only include columns matching agent dynamic variables
+- Do NOT include `language`, `voice_id`, `first_message`, `prompt` unless overrides enabled
+- Upload via: ElevenLabs → Conversational AI → agent → Batch Calling → Upload CSV
+
+See [[Projects/ElevenLabs Batch Calling]] for full reference.
+
+---
+
+*Last updated: April 24, 2026*
