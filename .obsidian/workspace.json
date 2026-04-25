@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#25-00091",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +70,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -220,12 +221,14 @@
   },
   "active": "home",
   "lastOpenFiles": [
+    "new_learnings.md",
+    "SOPs/Miami - Pricing Review.md",
+    "Projects/ElevenLabs Batch Calling.md",
     "Daily Notes/_Hub.md",
     "Daily Notes/2026-04-24.md",
     "Daily Notes/2026-04-23.md",
     "Areas/About Me.md",
     "Resources/Lead Sourcing.md",
-    "Projects/ElevenLabs Batch Calling.md",
     "Areas/Goals.md",
     "Areas/Finances.md",
     "Areas/Customs Business.md",
@@ -235,12 +238,10 @@
     "Ideas.md",
     "Inbox.md",
     "MEMORY.md",
-    "new_learnings.md",
     "Learning/README.md",
     "Projects/Miami Airbnb Arbitrage.md",
     "Projects/Customs Consulting Assistant.md",
     "SOPs/Miami - Guest Check-In.md",
-    "SOPs/Miami - Pricing Review.md",
     "Templates/Property Lead.md",
     "Templates/Vendor.md",
     "Templates/Weekly Review.md",
