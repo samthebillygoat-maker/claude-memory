@@ -1,5 +1,7 @@
 # 🛠️ Tech Notes
 
+[[Home|🏠 Home]] | [[Projects/Miami Airbnb Arbitrage|🏠 STR Project]] | [[Projects/ElevenLabs Batch Calling|📞 Batch Calling]]
+
 Updates on tools and APIs used across all projects.
 
 ---

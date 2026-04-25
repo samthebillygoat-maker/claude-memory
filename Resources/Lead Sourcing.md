@@ -1,5 +1,7 @@
 # 📋 Lead Sourcing — Landlord Phone Numbers
 
+[[Home|🏠 Home]] | [[Projects/ElevenLabs Batch Calling|📞 Batch Calling]] | [[Projects/Miami Airbnb Arbitrage|🏠 STR Project]]
+
 How to find real landlord phone numbers for cold calling campaigns.
 
 ---

@@ -1,5 +1,7 @@
 # 🌴 Miami STR Intelligence
 
+[[Home|🏠 Home]] | [[Projects/Miami Airbnb Arbitrage|🏠 STR Project]] | [[Areas/Finances|💰 Finances]]
+
 Research log — ongoing updates on Miami short-term rental market, regulations, and opportunities.
 
 ---

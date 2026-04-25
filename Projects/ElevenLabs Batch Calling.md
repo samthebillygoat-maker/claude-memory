@@ -1,5 +1,7 @@
 # 📞 ElevenLabs Batch Calling
 
+[[Home|🏠 Home]] | [[Projects/Miami Airbnb Arbitrage|🏠 STR Project]] | [[Resources/Lead Sourcing|📋 Lead Sourcing]] | [[Daily Notes/_Hub|📅 Daily Notes]]
+
 **Purpose:** Automatically call hundreds of landlords using ElevenLabs Conversational AI + Twilio. AI pitches the STR arbitrage deal, detects voicemail, leaves message if no answer.
 
 **Agent ID:** `agent_4801kpp6506efqhv1n4v62w555bs`  

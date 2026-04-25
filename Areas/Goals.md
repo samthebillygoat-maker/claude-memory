@@ -1,40 +1,44 @@
 # 🎯 Goals
 
+← [[Home|Back to Command Center]]
+
 ---
 
 ## 🔥 Mission
 
-Build multiple cash-flowing businesses that run without you — STR arbitrage nationally (not just Miami) for passive income, customs brokerage as the core business engine.
+Build multiple cash-flowing businesses that run without you — STR arbitrage nationally for passive income, customs brokerage as the core business engine.
 
 ---
 
-## Goal 1 — Sign First STR Lease (National)
+## Goal 1 — Sign First STR Lease
 
-**Target:** ASAP
-**Status:** Active — expanded from Miami-only to national (266 markets in DealScout)
+**Target:** ASAP — before Jul 31 for $750 Airbnb bonus  
+**Status:** 🟡 Active — cold calling underway
 
 ### Milestones
-- [ ] Run 10+ properties through Address Analyzer in the tool
-- [ ] Contact 20+ landlords via Outreach Manager
+- [x] Build DealScout tool with 532 national markets
+- [x] Build automated cold caller (Twilio + ElevenLabs)
+- [x] Collect 200+ real landlord phone numbers
+- [ ] **Launch 207-call ElevenLabs campaign** ← next action
+- [ ] Fix ElevenLabs Leave Voicemail broken tool reference
 - [ ] Get 3+ landlords to agree to sublease clause in writing
 - [ ] Sign lease with 2 free months concession
-- [ ] Obtain all 4 STR licenses (~$500–800)
+- [ ] Obtain all STR licenses (~$500–800)
 - [ ] Furnish unit (Budget tier: ~$3,000–5,000)
-- [ ] List on Airbnb — go live before Jul 31 for $750 Airbnb bonus
+- [ ] List on Airbnb — go live before Jul 31 for $750 bonus
 - [ ] First booking received
 - [ ] First profitable month
 
-### Action Steps This Week
-- [ ] 
-- [ ] 
-- [ ] 
+### Where the Leads Are
+- [[Resources/Lead Sourcing|Lead Sourcing Guide]] — how to find more landlord numbers
+- [[Projects/ElevenLabs Batch Calling|Batch Calling]] — 207 numbers ready, CSV at `Downloads/national_leads_elevenlabs_v2.csv`
 
 ---
 
 ## Goal 2 — World Cup Revenue Window
 
-**Target:** Jun 21 – Jul 18, 2026
-**Status:** Planning
+**Target:** Jun 21 – Jul 18, 2026  
+**Status:** 🟡 Planning — need unit live first
 
 ### Milestones
 - [ ] Unit live on Airbnb before July 1
@@ -43,67 +47,64 @@ Build multiple cash-flowing businesses that run without you — STR arbitrage na
 - [ ] Set rates at 90th percentile with 20% buffer
 - [ ] Earn $5,000+ during tournament window
 
+### Intel
+- [[Resources/Miami STR Intelligence#World Cup 2026|World Cup data]] — $255/night projected, $5k avg host earnings
+
 ---
 
 ## Goal 3 — Hire First Employee (Customs)
 
-**Target:** Q2 2026
-**Status:** Planning
+**Target:** Q2 2026  
+**Status:** 🔴 Not started
 
 ### Milestones
-- [ ] Define role clearly (title, responsibilities, salary range)
+- [ ] Define role (title, responsibilities, salary)
 - [ ] Set up dedicated hiring Gmail
-- [ ] Connect Gmail API → build/deploy Hiring Tool
-- [ ] Post job on Indeed
-- [ ] Screen first batch of candidates
-- [ ] Interview top 3
-- [ ] Make offer
-- [ ] Onboard first hire
+- [ ] Build and deploy [[Projects/Hiring Tool|Hiring Tool]]
+- [ ] Post on Indeed
+- [ ] Screen first candidates
+- [ ] Make offer + onboard
 
 ---
 
 ## Goal 4 — Build Customs Consulting Assistant
 
-**Target:** Q3 2026
-**Status:** Planning
+**Target:** Q3 2026  
+**Status:** 🔴 Not started
 
 ### Milestones
-- [ ] Decide which commodities to focus on first
-- [ ] Choose format (Streamlit or other)
-- [ ] Connect CBP API
-- [ ] Connect FDA API
-- [ ] Connect USDA/APHIS
-- [ ] Connect NOAA
+- [ ] Choose commodity focus and format
+- [ ] Connect CBP, FDA, USDA/APHIS, NOAA APIs
 - [ ] Build multi-agent cross-check layer
-- [ ] Internal beta test
-- [ ] Use with first client
+- [ ] Internal beta → use with first client
+
+See [[Projects/Customs Consulting Assistant]]
 
 ---
 
 ## Goal 5 — Scale to 3+ Units Nationally
 
-**Target:** End of 2026
-**Status:** Future
+**Target:** End of 2026  
+**Status:** 🔵 Future
 
 ### Milestones
 - [ ] Unit 1 profitable for 60+ days
-- [ ] Systemize operations with SOPs
-- [ ] Hire cleaner / co-host
-- [ ] Sign Unit 2 lease (different market)
-- [ ] Sign Unit 3 lease
-- [ ] Automate pricing, messaging, reviews
-- [ ] Cold caller running on autopilot — ElevenLabs agent pitching landlords daily
+- [ ] Systemize with SOPs, hire cleaner/co-host
+- [ ] Sign Unit 2 (different market)
+- [ ] Sign Unit 3
+- [ ] Cold caller on autopilot — ElevenLabs agent running daily
 
 ---
 
 ## Long Term (3–5 Years)
 
-- 10+ Miami units generating $15k+/mo passive income
-- Customs consulting tool generating recurring SaaS revenue
+- 10+ units generating $15k+/mo passive income
+- Customs tool generating recurring SaaS revenue
 - Both businesses run by teams, not by you daily
 
 ---
 
-## Completed Goals
-
-<!-- move here when done -->
+## Completed
+- [x] Build DealScout with national markets (532 markets as of Apr 23)
+- [x] Build automated cold caller end-to-end
+- [x] Collect 200+ verified landlord phone numbers

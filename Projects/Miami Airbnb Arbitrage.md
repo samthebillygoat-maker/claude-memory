@@ -1,5 +1,7 @@
 # 🏠 CitySide Stays — STR Arbitrage (National)
 
+[[Home|🏠 Home]] | [[Areas/Goals|🎯 Goals]] | [[Daily Notes/_Hub|📅 Daily Notes]]
+
 **Status:** Active — scaling nationally  
 **Goal:** Sign long-term leases with sublease rights → furnish → list on Airbnb/Furnished Finder → keep the spread  
 **Scope:** All 50 states — not just Miami anymore
