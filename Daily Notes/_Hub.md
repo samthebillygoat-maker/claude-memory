@@ -12,6 +12,8 @@ All session logs live here. Each note captures what was built, decisions made, a
 
 | Date | Key Work | Status |
 |------|----------|--------|
+| [[Daily Notes/2026-04-27\|Apr 27]] | All agents completed. City scraper fixed (phone regex + reply endpoint + address selectors). Pushed 67 files to GitHub. QA model ID rollback. | ✅ |
+| [[Daily Notes/2026-04-26\|Apr 26]] | Miami Arbitrage expanded to 23 pages overnight. ElevenLabs 500-call pipeline built. Abandoned Place Finder built (10+ sources, AI scoring). UI/UX SaaS polish. | ✅ |
 | [[Daily Notes/2026-04-24\|Apr 24]] | 207 real phone numbers scraped via RentCast across 532 markets. ElevenLabs batch CSV ready. +1792 fake number problem identified and blocked. Tampa skip trace file exported. | ✅ |
 | [[Daily Notes/2026-04-23\|Apr 23]] | Auto-transcription (Whisper) on every call. All creds moved to .env. DealScout expanded to 532 markets. 100 national leads collected (18 valid RentCast + 82 +1792 spam). Zillow API research. | ✅ |
 | [[Daily Notes/2026-04-22\|Apr 22]] | Cold caller built: Twilio + ElevenLabs + Flask (server.py). Auto Call button, live listen-in, auto-recording. RentCast phone fix. Playwright added. DealScout 266 → 532 markets. DealScout bug sweep. Obsidian brain created. | ✅ |
