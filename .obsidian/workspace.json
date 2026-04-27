@@ -11,10 +11,14 @@
             "id": "home",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Daily Notes/_Hub.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "_Hub"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#25-00091",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -182,8 +186,11 @@
   },
   "active": "home",
   "lastOpenFiles": [
-    "Daily Notes/2026-04-22.md",
+    "Home.md",
+    "Untitled.base",
     "new_learnings.md",
+    "Untitled 1.canvas",
+    "Daily Notes/2026-04-22.md",
     "SOPs/Miami - Pricing Review.md",
     "Projects/ElevenLabs Batch Calling.md",
     "Daily Notes/_Hub.md",
@@ -208,7 +215,6 @@
     "Templates/Weekly Review.md",
     "Contacts/Landlords/README.md",
     "Contacts/Customs Clients/README.md",
-    "Home.md",
     "Daily Notes",
     "Properties",
     "Contacts/Vendors",
