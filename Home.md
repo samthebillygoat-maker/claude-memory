@@ -1,6 +1,6 @@
 # 🧠 Sam's Brain — Command Center
 
-> Last updated: [[Daily Notes/2026-04-24|April 24, 2026]]
+> Last updated: [[Daily Notes/2026-04-27|April 27, 2026]]
 
 ---
 
@@ -8,11 +8,11 @@
 
 | | |
 |--|--|
-| **Today's #1 priority** | Upload `national_leads_elevenlabs_v2.csv` → ElevenLabs → launch 207-call campaign |
-| **Blocked on** | ElevenLabs Leave Voicemail broken tool reference (fix takes 2 min) |
-| **Next unlock** | Skip trace Tampa → batchskiptracing.com → upload `tampa_addresses_skiptrace.csv` |
+| **Today's #1 priority** | Run 12 Miami + Tampa addresses through AirDNA (Playwright automation) |
+| **Blocked on** | AirDNA browser session needs to reopen + manual login |
+| **Next unlock** | ElevenLabs voicemail fix → launch 500-call campaign |
 | **Deadline** | Jul 31, 2026 — Airbnb $750 new host bonus |
-| **Days remaining** | 98 days |
+| **Days remaining** | 95 days |
 
 ---
 
@@ -44,8 +44,16 @@
 |--|--|
 | [[Projects/Miami Airbnb Arbitrage\|🏠 STR Arbitrage]] | National arbitrage business — DealScout, cold calling, leases |
 | [[Projects/ElevenLabs Batch Calling\|📞 Batch Calling]] | AI cold caller — 207 numbers ready, CSV format, known issues |
+| [[Projects/Abandoned Place Finder\|🏚 Abandoned Finder]] | Urbex tool — 10+ sources, AI scoring, Obsidian export |
 | [[Projects/Hiring Tool\|👥 Hiring Tool]] | Gmail resume screener — planning |
 | [[Projects/Customs Consulting Assistant\|🚢 Customs Tool]] | Multi-agency compliance tool — planning |
+
+### Setup & Tools
+| | |
+|--|--|
+| [[Setup/Claude Code - Plugins & Tools\|🔧 Claude Code Setup]] | Plugins, MCP servers, all installed tools |
+| [[Setup/ElevenLabs Cold Calling Setup\|📞 ElevenLabs Setup]] | Step-by-step cold calling setup guide |
+| [[Setup/Auto Browser Setup\|🌐 Auto Browser]] | Docker browser automation (superseded by Playwright MCP) |
 
 ### You
 | | |
@@ -79,6 +87,8 @@
 
 ## 📅 Recent Sessions
 
+- [[Daily Notes/2026-04-27|Apr 27]] — Token optimization, AirDNA automation planned, vault consolidation (3 → 1)
+- [[Daily Notes/2026-04-26|Apr 26]] — App to 23 pages, ElevenLabs 500-call system, Abandoned Finder built, pushed to GitHub
 - [[Daily Notes/2026-04-24|Apr 24]] — 207 real phone numbers scraped, ElevenLabs CSV ready, +1792 spam problem documented
 - [[Daily Notes/2026-04-23|Apr 23]] — Auto-transcription added, 532 markets in DealScout, 100 national leads (18 valid)
 - [[Daily Notes/2026-04-22|Apr 22]] — Cold caller built (Twilio + ElevenLabs), Playwright added, DealScout to 266 markets
@@ -87,9 +97,9 @@
 
 ## 🏆 Latest Wins
 
+- **Apr 27** — Playwright MCP active, all 3 Obsidian vaults consolidated into one, 12 Miami + Tampa addresses queued for AirDNA
+- **Apr 26** — DealScout at 23 pages, 500-call ElevenLabs system live, Abandoned Finder shipped
 - **Apr 24** — 207 real landlord phone numbers collected in a single run across 532 markets
-- **Apr 23** — Auto-transcription on every call via Whisper, .env credentials, 532 markets
-- **Apr 22** — Cold caller live end-to-end: Auto Call → AI pitches landlord → recording plays back
 
 ---
 
