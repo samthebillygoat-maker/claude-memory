@@ -11,10 +11,14 @@
             "id": "home",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Daily Notes/2026-04-29.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-04-29"
             }
           }
         ]
@@ -182,14 +186,17 @@
   },
   "active": "home",
   "lastOpenFiles": [
+    "Daily Notes/2026-04-28.md",
+    "Home.md",
+    "Daily Notes/_Hub.md",
+    "Daily Notes/2026-04-24.md",
+    "Contacts/README.md",
+    "Contacts/Landlords/README.md",
     "Abandoned Places/Sacramento, CA/_Index — Sacramento, CA.md",
     "Abandoned Places/Sacramento, CA",
     "Abandoned Places",
     "Daily Notes/2026-04-27.md",
-    "Daily Notes/_Hub.md",
-    "Home.md",
     "Setup/ElevenLabs Cold Calling Setup.md",
-    "Daily Notes/2026-04-24.md",
     "Projects/Afroman Agent.md",
     "Projects/Abandoned Place Finder.md",
     "Setup/Auto Browser Setup.md",
@@ -212,10 +219,7 @@
     "Areas/Goals.md",
     "Areas/Finances.md",
     "Areas/Customs Business.md",
-    "Contacts/Vendors/README.md",
     "Untitled.canvas",
-    "Ideas.md",
-    "Inbox.md",
     "Daily Notes",
     "Properties",
     "Contacts/Vendors",
