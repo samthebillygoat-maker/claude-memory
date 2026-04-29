@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "4 steaps to the tools etc, i want the website to flow, I want all 500 markets loaded into every tool, pictures for the top preforming markets,, and more in depth and configurable market analytics section, and i want a home page thats simple, have the market analytics graph not on the home page, along with the top markets that should all be somewhere else,on the homne page generate fake reviews, monly saving estimates from the tool- example how much a cold outreach caller would be, a listing scout etc etc, make this tool that im selling is really amazing value to people",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -184,7 +184,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "home",
+  "active": "643339f01109ffa3",
   "lastOpenFiles": [
     "Daily Notes/2026-04-28.md",
     "Home.md",
