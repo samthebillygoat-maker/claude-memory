@@ -190,3 +190,35 @@ Match dates at Hard Rock Stadium: Jun 21, 24, 27 Â· Jul 3, 11, 18
 ## Related
 - [[Resources/Miami STR Intelligence]] â€” market research & regulatory updates
 - [[Resources/Tech Notes]] â€” API changes, Streamlit updates
+- [[Resources/Miami STR Zoning per ZIP]] — verified per-zip STR posture (2026-05-14), pack-shipping filter rules
+- [[Resources/Apify Apartments Scraper Field Notes]] — actor gotchas, Prosumer detection, PM filter heuristics, cost model
+
+---
+
+## The Friday Pack — Fresh Lead Pipeline (added 2026-05-14)
+
+A second product layered on top of CitySide: weekly lead-pack delivery
+to other STR operators. Lives in two repos:
+
+- `C:\Users\samth\hail-mary\` — Next.js app at thefridaypack.com
+- `C:\Users\samth\miami-arbitrage\` — Python scraper + formatter
+
+**Pipeline:**
+1. `miami-arbitrage/scripts/scrape_apartments_apify.py --markets <slugs> --pages N --details`
+2. `miami-arbitrage/scripts/format_as_friday_pack.py --date YYYY-MM-DD --markets <slugs>`
+   - Dedupes by (address, phone), drops phones with >5 listings (PM filter)
+   - Scores: +15/extra building, +10 rent in band ($950-$3500), +10 phone valid, +5 owner tag
+   - Writes `data/friday_pack_leads_<DATE>.json` keyed by market slug
+3. Copy to `hail-mary/src/data/friday-pack-fresh.json`
+4. `hail-mary/scripts/send-friday-sample.mjs --send` blasts 3 GREEN leads/week to Free Sample subscribers
+
+**Free Sample funnel:** `/free-sample` route + FAB widget on every page →
+`EmailSignup` Prisma model (source='free-sample-friday-pack') → Friday
+9am ET blast script.
+
+**Paid pack pricing (canonical):** $29 trial / $97 starter / $197/mo
+weekly / $347/mo pro. **Always 50 leads per pack, never 25.**
+
+**Apify budget:** Free tier $5/mo (currently exhausted, resets June 1).
+Starter $49/mo covers ~25k listings/mo. Don't upgrade until a customer
+is waiting on a market not in `friday-pack-fresh.json`.
