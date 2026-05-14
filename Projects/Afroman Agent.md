@@ -1,12 +1,12 @@
----
-title: Afroman Agent — CitySide Stays Cold Caller
+﻿---
+title: Afroman Agent â€” CitySide Stays Cold Caller
 date: 2026-04-27
 tags: [project, elevenlabs, cold-calling, citysidestays, agent]
 type: project
 status: in-progress
 ---
 
-# Afroman Agent — CitySide Stays LLC
+# Afroman Agent â€” CitySide Stays LLC
 
 **ElevenLabs Agent ID:** `agent_4801kpp6506efqhv1n4v62w555bs`
 **Full config file:** `C:\Users\samth\miami-arbitrage\data\afroman_agent_config.md`
@@ -15,7 +15,7 @@ status: in-progress
 
 ## What This Agent Does
 
-Outbound cold caller for CitySide Stays LLC. Calls landlords/property managers and pitches corporate housing leases. Transparent about the model — lists on Airbnb, VRBO, Furnished Finder, Booking.com, Travelnurses.com.
+Outbound cold caller for CitySide Stays LLC. Calls landlords/property managers and pitches corporate housing leases. Transparent about the model â€” lists on Airbnb, VRBO, Furnished Finder, Booking.com, Travelnurses.com.
 
 **Pitch:** "We lease 5-20 units, pay 2 weeks in advance, handle all guests, background checks on everyone, cameras/smart locks/noise monitors installed."
 
@@ -23,25 +23,25 @@ Outbound cold caller for CitySide Stays LLC. Calls landlords/property managers a
 
 ## What Was Set Up (April 27, 2026)
 
-- ✅ System prompt — full corporate housing script with all branches
-- ✅ First message set
-- ✅ Dynamic variables: city, address, callback_number, units_interested, landlord_name, sam_email
-- ✅ Voice settings: Speed 0.95, Similarity Boost 0.80
-- ✅ Turn settings: Patient, 15s timeout
-- ✅ Guardrails added to system prompt
+- âœ… System prompt â€” full corporate housing script with all branches
+- âœ… First message set
+- âœ… Dynamic variables: city, address, callback_number, units_interested, landlord_name, sam_email
+- âœ… Voice settings: Speed 0.95, Similarity Boost 0.80
+- âœ… Turn settings: Patient, 15s timeout
+- âœ… Guardrails added to system prompt
 
 ## What Still Needs To Be Done (pick up here after restart)
 
-- ❌ **Workflow tab** — needs to be built (Playwright browser required)
-- ❌ **Data collection fields** — not configured yet
-- ❌ **Knowledge base** — not attached yet
+- âŒ **Workflow tab** â€” needs to be built (Playwright browser required)
+- âŒ **Data collection fields** â€” not configured yet
+- âŒ **Knowledge base** â€” not attached yet
 
 ### Workflow Nodes to Build
-1. Start → Wait for Human (silent until they say hello)
-2. Human detected → Live Pitch (main conversation node)
-3. Voicemail detected → Voicemail node (leave message, end)
-4. Live Pitch → End (don't hang up abruptly — let conversation finish naturally)
-5. Voicemail → End immediately after message
+1. Start â†’ Wait for Human (silent until they say hello)
+2. Human detected â†’ Live Pitch (main conversation node)
+3. Voicemail detected â†’ Voicemail node (leave message, end)
+4. Live Pitch â†’ End (don't hang up abruptly â€” let conversation finish naturally)
+5. Voicemail â†’ End immediately after message
 
 ### Data Collection Fields to Add
 - Contact name and role
@@ -57,7 +57,7 @@ Outbound cold caller for CitySide Stays LLC. Calls landlords/property managers a
 - Next action: follow up/DNC/qualified/send email
 
 ### Knowledge Base Doc to Create + Attach
-See full KB content in: `C:\Users\samth\miami-arbitrage\data\afroman_agent_config.md` → "Knowledge Base" section
+See full KB content in: `C:\Users\samth\miami-arbitrage\data\afroman_agent_config.md` â†’ "Knowledge Base" section
 
 ---
 
@@ -65,11 +65,11 @@ See full KB content in: `C:\Users\samth\miami-arbitrage\data\afroman_agent_confi
 
 **Opening:** Corporate housing provider, looking to lease 5-20 units in [city] by end of month. Saw listing at [address]. "Do you allow corporate leases?"
 
-**If YES:** Explain model → clarify 3rd party platforms (Airbnb, VRBO, Furnished Finder, Booking.com, Travelnurses.com) → qualify units → collect email → schedule tour
+**If YES:** Explain model â†’ clarify 3rd party platforms (Airbnb, VRBO, Furnished Finder, Booking.com, Travelnurses.com) â†’ qualify units â†’ collect email â†’ schedule tour
 
-**If CONFUSED:** Explain "we lease FROM you, you get rent, we house our guests" → re-ask
+**If CONFUSED:** Explain "we lease FROM you, you get rent, we house our guests" â†’ re-ask
 
-**If NO:** Ask why → pitch: background checks, cameras, smart locks, noise monitors, professional cleaning, never leave, multi-year lease → still try to collect email
+**If NO:** Ask why â†’ pitch: background checks, cameras, smart locks, noise monitors, professional cleaning, never leave, multi-year lease â†’ still try to collect email
 
 **If MINIMUM STAY concern:** "We sign 12-36 month lease WITH YOU. Your lease is long-term. Our guests vary."
 
@@ -81,13 +81,13 @@ See full KB content in: `C:\Users\samth\miami-arbitrage\data\afroman_agent_confi
 
 ## API Access Issue
 
-ElevenLabs key `sk_f8d2329a91584c52b9be16be8d43ee2825b904a484bf8b7e` has zero ConvAI permissions — can't push config via API. Need either:
+ElevenLabs key `[REDACTED-ElevenLabs-key]` has zero ConvAI permissions â€” can't push config via API. Need either:
 - New key with ConvAI read/write permissions
 - OR use Playwright browser to configure directly
 
 ---
 
-## AirDNA — Still Pending
+## AirDNA â€” Still Pending
 
 Need to run these addresses through AirDNA Rentalizer after restart:
 
@@ -119,4 +119,4 @@ Need to run these addresses through AirDNA Rentalizer after restart:
 
 ## Session Hook Issue
 
-The Stop hook at `~/.claude/obsidian_session_sync.py` is running too frequently — appending duplicate entries to the daily note on every minor stop event. Needs to be fixed to deduplicate or only run once per session.
+The Stop hook at `~/.claude/obsidian_session_sync.py` is running too frequently â€” appending duplicate entries to the daily note on every minor stop event. Needs to be fixed to deduplicate or only run once per session.

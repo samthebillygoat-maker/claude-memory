@@ -1,17 +1,17 @@
-# 📋 Lead Sourcing — Landlord Phone Numbers
+﻿# ðŸ“‹ Lead Sourcing â€” Landlord Phone Numbers
 
-[[Home|🏠 Home]] | [[Projects/ElevenLabs Batch Calling|📞 Batch Calling]] | [[Projects/Miami Airbnb Arbitrage|🏠 STR Project]]
+[[Home|ðŸ  Home]] | [[Projects/ElevenLabs Batch Calling|ðŸ“ž Batch Calling]] | [[Projects/Miami Airbnb Arbitrage|ðŸ  STR Project]]
 
 How to find real landlord phone numbers for cold calling campaigns.
 
 ---
 
-## Source #1: RentCast API (Best — Use This First)
+## Source #1: RentCast API (Best â€” Use This First)
 
 **What it returns:** Active rental listings with `listingAgent.phone` and `listingOffice.phone` fields  
 **Quality:** Real, verified agent/property manager numbers  
-**Cost:** Paid API — key stored in DealScout settings  
-**API key:** `0e394cd1cacc42fab97b2246027802ea`
+**Cost:** Paid API â€” key stored in DealScout settings  
+**API key:** `[REDACTED-RentCast-key]`
 
 **How to run:**
 ```
@@ -30,19 +30,19 @@ python scripts/batch_national_scrape.py
 | Galveston | TX | 44 phones |
 | Palm Springs | CA | 12+ phones |
 | Marco Island | FL | 3 phones |
-| Sedona | AZ | 1–2 phones |
-| Fredericksburg | TX | 1–2 phones |
-| Gatlinburg | TN | 2–3 phones |
+| Sedona | AZ | 1â€“2 phones |
+| Fredericksburg | TX | 1â€“2 phones |
+| Gatlinburg | TN | 2â€“3 phones |
 
 **Markets where RentCast returns NO phones:**
-- Tampa FL — 500 listings, zero phones
+- Tampa FL â€” 500 listings, zero phones
 - Most inland/suburban markets
 
 **API endpoint:**
 ```
 GET https://api.rentcast.io/v1/listings/rental/long-term
   ?city={city}&state={state}&status=Active&limit=100
-Header: X-Api-Key: 0e394cd1cacc42fab97b2246027802ea
+Header: X-Api-Key: [REDACTED-RentCast-key]
 ```
 
 ---
@@ -53,20 +53,20 @@ Header: X-Api-Key: 0e394cd1cacc42fab97b2246027802ea
 
 **Workflow:**
 1. Pull addresses from RentCast (even without phones)
-2. Export to CSV: `phone_number,city,number_of_units` → just `address,city,state,zip`
+2. Export to CSV: `phone_number,city,number_of_units` â†’ just `address,city,state,zip`
 3. Upload to **batchskiptracing.com** (same company as BatchLeads)
-   - New accounts get free credits — try before paying
-   - Paid rate: ~$0.15–0.20/record
-4. Download results → send to Claude → formatted for ElevenLabs
+   - New accounts get free credits â€” try before paying
+   - Paid rate: ~$0.15â€“0.20/record
+4. Download results â†’ send to Claude â†’ formatted for ElevenLabs
 
 **Tampa skip trace file ready:** `C:\Users\samth\Downloads\tampa_addresses_skiptrace.csv` (500 addresses)
 
 ---
 
-## Source #3: Craigslist Scraping (Mostly Useless — Documented for Reference)
+## Source #3: Craigslist Scraping (Mostly Useless â€” Documented for Reference)
 
 **Why it doesn't work:**
-- Phones hidden behind JS "reply" button — not in HTML
+- Phones hidden behind JS "reply" button â€” not in HTML
 - Playwright can reveal them but most markets don't have phones in listing text
 - Craigslist spam farms embed fake +1792 numbers in listing body text
 
@@ -76,7 +76,7 @@ Header: X-Api-Key: 0e394cd1cacc42fab97b2246027802ea
 
 ---
 
-## ⚠️ The +1792 Fake Number Problem
+## âš ï¸ The +1792 Fake Number Problem
 
 **Area code 792 does not exist** in the North American Numbering Plan.
 
@@ -87,7 +87,7 @@ Any list with lots of +1792 numbers = from a Craigslist spam farm. Trash the lis
 - Numbers that resolve to invalid when dialed
 - Common in CL scrapes for: Jackson WY, St. Augustine FL, Hilton Head SC, Cape Cod MA, Palm Springs CA (CL results only)
 
-**Fix in scraper** — `normalize_phone()` in `batch_national_scrape.py` now blocks 792.
+**Fix in scraper** â€” `normalize_phone()` in `batch_national_scrape.py` now blocks 792.
 
 ---
 

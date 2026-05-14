@@ -1,10 +1,10 @@
-# 🏠 CitySide Stays — STR Arbitrage (National)
+﻿# ðŸ  CitySide Stays â€” STR Arbitrage (National)
 
-[[Home|🏠 Home]] | [[Areas/Goals|🎯 Goals]] | [[Daily Notes/_Hub|📅 Daily Notes]]
+[[Home|ðŸ  Home]] | [[Areas/Goals|ðŸŽ¯ Goals]] | [[Daily Notes/_Hub|ðŸ“… Daily Notes]]
 
-**Status:** Active — scaling nationally  
-**Goal:** Sign long-term leases with sublease rights → furnish → list on Airbnb/Furnished Finder → keep the spread  
-**Scope:** All 50 states — not just Miami anymore
+**Status:** Active â€” scaling nationally  
+**Goal:** Sign long-term leases with sublease rights â†’ furnish â†’ list on Airbnb/Furnished Finder â†’ keep the spread  
+**Scope:** All 50 states â€” not just Miami anymore
 
 ---
 
@@ -12,7 +12,7 @@
 
 | | |
 |--|--|
-| Min ratio | 2.0x (STR monthly revenue ÷ rent) |
+| Min ratio | 2.0x (STR monthly revenue Ã· rent) |
 | Target ratio | 3.0x+ |
 | Sweet spot | 4x+ ratio, rent under $1,000/mo |
 | Lease requirement | Written sublease/STR permission |
@@ -22,7 +22,7 @@
 ## DealScout Tool
 
 **Location:** `C:\Users\samth\miami-arbitrage\`  
-**Stack:** Python · Streamlit · Plotly · Pandas · Flask · Twilio · ElevenLabs · Playwright
+**Stack:** Python Â· Streamlit Â· Plotly Â· Pandas Â· Flask Â· Twilio Â· ElevenLabs Â· Playwright
 
 **Run it:**
 ```
@@ -31,32 +31,32 @@ streamlit run app.py
 ```
 Opens at http://localhost:8501
 
-**Data persists** to `data\saved_data.json` — survives restarts.
+**Data persists** to `data\saved_data.json` â€” survives restarts.
 
 ### Pages (as of April 2026)
-1. **Property Analyzer** — full 12-month P&L, 3-scenario analysis
-2. **Neighborhood Guide** — compare markets, revenue heatmap
-3. **Furnishing Calculator** — Budget/Mid/Premium tiers
-4. **Saved Properties** — track leads with contact info, status
-5. **Legal & Compliance** — STR rules by jurisdiction
-6. **Checklist** — 3-phase task tracker, outreach scripts
-7. **Outreach Manager** — parse listings → generate emails → track responses
-8. **Address Analyzer** — paste any address → full analysis + comps
-9. **Listing Scout** — multi-source lead finder + auto cold caller ← MAIN PAGE
-10. **Acquisitions Report** — PDF report generator
-11. **Contact Finder** — owner lookup + skip trace
-12. **Email Monitor** — Gmail IMAP scanner + AI drafts + SMS alerts
+1. **Property Analyzer** â€” full 12-month P&L, 3-scenario analysis
+2. **Neighborhood Guide** â€” compare markets, revenue heatmap
+3. **Furnishing Calculator** â€” Budget/Mid/Premium tiers
+4. **Saved Properties** â€” track leads with contact info, status
+5. **Legal & Compliance** â€” STR rules by jurisdiction
+6. **Checklist** â€” 3-phase task tracker, outreach scripts
+7. **Outreach Manager** â€” parse listings â†’ generate emails â†’ track responses
+8. **Address Analyzer** â€” paste any address â†’ full analysis + comps
+9. **Listing Scout** â€” multi-source lead finder + auto cold caller â† MAIN PAGE
+10. **Acquisitions Report** â€” PDF report generator
+11. **Contact Finder** â€” owner lookup + skip trace
+12. **Email Monitor** â€” Gmail IMAP scanner + AI drafts + SMS alerts
 
 ### Key Data Files
 ```
-data/scraper.py         — 532 national markets (MARKET dict) — single source of truth
-data/neighborhoods.py   — Miami neighborhood rates/occupancy
-data/seasonal.py        — monthly demand factors
-data/furnishing.py      — furnishing items by tier
-data/regulations.py     — STR rules by jurisdiction
-data/saved_data.json    — saved properties, pipeline, outreach queue
-data/scout_cache.json   — Listing Scout search results cache
-data/airdna_cache.json  — AirDNA Rentalizer cache (7-day TTL)
+data/scraper.py         â€” 532 national markets (MARKET dict) â€” single source of truth
+data/neighborhoods.py   â€” Miami neighborhood rates/occupancy
+data/seasonal.py        â€” monthly demand factors
+data/furnishing.py      â€” furnishing items by tier
+data/regulations.py     â€” STR rules by jurisdiction
+data/saved_data.json    â€” saved properties, pipeline, outreach queue
+data/scout_cache.json   â€” Listing Scout search results cache
+data/airdna_cache.json  â€” AirDNA Rentalizer cache (7-day TTL)
 ```
 
 ---
@@ -71,7 +71,7 @@ data/airdna_cache.json  — AirDNA Rentalizer cache (7-day TTL)
 
 ### How to Run Every Session
 ```
-# Terminal 1 — Flask server (cold caller backend)
+# Terminal 1 â€” Flask server (cold caller backend)
 cd C:\Users\samth\miami-arbitrage
 set ELEVENLABS_API_KEY=[from ElevenLabs dashboard]
 set TWILIO_ACCOUNT_SID=[from Twilio dashboard]
@@ -80,57 +80,57 @@ set TWILIO_FROM_NUMBER=+17753695206
 set SERVER_URL=https://[ngrok-url-changes-each-session]
 python server.py
 
-# Terminal 2 — expose Flask to internet (Twilio needs public URL)
+# Terminal 2 â€” expose Flask to internet (Twilio needs public URL)
 C:\Users\samth\miami-arbitrage\ngrok.exe http 5001
 
-# Terminal 3 — DealScout UI
+# Terminal 3 â€” DealScout UI
 cd C:\Users\samth\miami-arbitrage
 streamlit run app.py
 ```
-> ⚠️ ngrok URL changes every session — always update SERVER_URL before starting Flask
+> âš ï¸ ngrok URL changes every session â€” always update SERVER_URL before starting Flask
 
 ### Server Endpoints
 | Endpoint | Purpose |
 |---|---|
 | `POST /make-call` | Dials landlord via Twilio, starts ElevenLabs AI |
-| `GET /audio-stream` | Live call audio stream — open in browser to listen in |
+| `GET /audio-stream` | Live call audio stream â€” open in browser to listen in |
 | `GET /call-status/<sid>` | Returns call status + recording URL |
 | `WS /audio-fork` | Twilio forks call audio here (internal) |
-| `POST /outbound-call` | Twilio webhook — returns ElevenLabs TwiML |
+| `POST /outbound-call` | Twilio webhook â€” returns ElevenLabs TwiML |
 
 ### Features
 - **Auto Call button** in every Listing Scout lead card
-- **🎧 Listen In** — open `http://localhost:5001/audio-stream` in browser during call
-- **📼 Recording** — auto-records every call, playback inline after call ends
-- **Auto-marks lead** as `📞 Called` in pipeline after dialing
+- **ðŸŽ§ Listen In** â€” open `http://localhost:5001/audio-stream` in browser during call
+- **ðŸ“¼ Recording** â€” auto-records every call, playback inline after call ends
+- **Auto-marks lead** as `ðŸ“ž Called` in pipeline after dialing
 
-### Known Issue (as of April 24, 2026 — still unresolved)
-ElevenLabs workflow has broken `voicemail_detection` tool reference in **Leave Voicemail** node → causes "Documents with ids not found" error mid-call.  
-**Fix:** ElevenLabs → agent `agent_4801kpp6506efqhv1n4v62w555bs` → Workflow → Leave Voicemail node → remove broken tool reference
+### Known Issue (as of April 24, 2026 â€” still unresolved)
+ElevenLabs workflow has broken `voicemail_detection` tool reference in **Leave Voicemail** node â†’ causes "Documents with ids not found" error mid-call.  
+**Fix:** ElevenLabs â†’ agent `agent_4801kpp6506efqhv1n4v62w555bs` â†’ Workflow â†’ Leave Voicemail node â†’ remove broken tool reference
 
 ### ElevenLabs Agent Variables
-- `{{city}}` — target city name (populated from CSV per row)
-- `{{callback_number}}` — 9254098490 (hardcoded in agent)
-- `{{number_of_units}}` — 5 (set in CSV column)
+- `{{city}}` â€” target city name (populated from CSV per row)
+- `{{callback_number}}` â€” 9254098490 (hardcoded in agent)
+- `{{number_of_units}}` â€” 5 (set in CSV column)
 
 ---
 
 ## Phone Number Sourcing
 
-**Best source:** RentCast API → `listingAgent.phone` + `listingOffice.phone`  
-**Skip trace:** batchskiptracing.com (free credits for new accounts) — for markets where RentCast has no phones  
-**Craigslist:** mostly useless — phones hidden behind JS, spam farms embed fake +1792 numbers  
+**Best source:** RentCast API â†’ `listingAgent.phone` + `listingOffice.phone`  
+**Skip trace:** batchskiptracing.com (free credits for new accounts) â€” for markets where RentCast has no phones  
+**Craigslist:** mostly useless â€” phones hidden behind JS, spam farms embed fake +1792 numbers  
 **Manual entry:** enter phone per listing in Listing Scout, saved to pipeline
 
-**⚠️ +1792 area code = fake** — not a real US area code. Any list with lots of 792 numbers is Craigslist spam. Trash it.
+**âš ï¸ +1792 area code = fake** â€” not a real US area code. Any list with lots of 792 numbers is Craigslist spam. Trash it.
 
 See [[Resources/Lead Sourcing]] for full sourcing guide and results history.
 
-**RentCast API key:** `0e394cd1cacc42fab97b2246027802ea` (also stored in DealScout settings)
+**RentCast API key:** `[REDACTED-RentCast-key]` (also stored in DealScout settings)
 
 ## Batch Cold Calling
 
-207 real landlord numbers collected April 24 — ready to call via ElevenLabs batch.  
+207 real landlord numbers collected April 24 â€” ready to call via ElevenLabs batch.  
 See [[Projects/ElevenLabs Batch Calling]] for full workflow, CSV format, and known issues.
 
 ---
@@ -149,20 +149,20 @@ See [[Projects/ElevenLabs Batch Calling]] for full workflow, CSV format, and kno
 
 ### Military Town Playbook
 Columbus GA confirmed: Fort Moore drives PCS/TDY/family demand, almost no STR competition.  
-Same model: San Antonio TX · Fayetteville NC · Killeen TX · Clarksville TN
+Same model: San Antonio TX Â· Fayetteville NC Â· Killeen TX Â· Clarksville TN
 
 ---
 
 ## Financial Model
 
 ```
-Revenue = nightly rate × nights × occupancy × seasonal factor
+Revenue = nightly rate Ã— nights Ã— occupancy Ã— seasonal factor
 Airbnb fee: 15.5% (host-only, changed Dec 1 2025)
 Miami-Dade TOT: 6% (monthly remittance now)
 FL sales tax: 7%
 
-Expenses: rent · utilities $130–185 · internet $70 · cleaning $85–145/turn
-          supplies $75 · STR insurance $85 · platform tools $55 · misc 2% rent
+Expenses: rent Â· utilities $130â€“185 Â· internet $70 Â· cleaning $85â€“145/turn
+          supplies $75 Â· STR insurance $85 Â· platform tools $55 Â· misc 2% rent
 
 ROI = annual net profit / (furnishing + deposit + license + launch supplies)
 ```
@@ -175,18 +175,18 @@ ROI = annual net profit / (furnishing + deposit + license + launch supplies)
 - Miami-Dade Certificate of Use required
 - City BTR required if >$25k/yr
 - Tourist tax: monthly remittance (25% penalty for late)
-- **Miami Beach: AVOID** — fines start $20k, grandfathering cutoff Jan 1, 2026
+- **Miami Beach: AVOID** â€” fines start $20k, grandfathering cutoff Jan 1, 2026
 
 ---
 
-## World Cup 2026 — Miami Opportunity
+## World Cup 2026 â€” Miami Opportunity
 
-Match dates at Hard Rock Stadium: Jun 21, 24, 27 · Jul 3, 11, 18  
-- ADR up 30% YoY · 80% demand increase · avg host earns ~$5,000 for full tournament
+Match dates at Hard Rock Stadium: Jun 21, 24, 27 Â· Jul 3, 11, 18  
+- ADR up 30% YoY Â· 80% demand increase Â· avg host earns ~$5,000 for full tournament
 - $750 Airbnb bonus for new hosts live by Jul 31, 2026
 
 ---
 
 ## Related
-- [[Resources/Miami STR Intelligence]] — market research & regulatory updates
-- [[Resources/Tech Notes]] — API changes, Streamlit updates
+- [[Resources/Miami STR Intelligence]] â€” market research & regulatory updates
+- [[Resources/Tech Notes]] â€” API changes, Streamlit updates

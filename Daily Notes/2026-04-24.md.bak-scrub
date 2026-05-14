@@ -1,0 +1,198 @@
+# Daily Note — 2026-04-24
+
+[[Daily Notes/_Hub|← All Daily Notes]] | [[Home|🏠 Home]]
+
+## What I Did Today
+
+- Diagnosed and fixed ElevenLabs batch calling CSV format issues (Miami leads)
+- Discovered all 99 Tampa leads were fake (+1792 area code — not a real US area code)
+- Confirmed Tampa Craigslist landlords don't post phones in listing text (Playwright confirmed)
+- Confirmed RentCast Tampa listings have no agent/office phone fields populated
+- Exported 500 Tampa property addresses from RentCast for skip tracing
+- Ran full national RentCast scrape across all 532 markets → found **207 real phone numbers**
+- Built and saved ElevenLabs-ready CSV for tomorrow's batch campaign
+
+---
+
+## ElevenLabs Batch Calling — Status
+
+### ✅ National Leads — Ready to Launch Tomorrow
+- **File:** `C:\Users\samth\Downloads\national_leads_elevenlabs_v2.csv`
+- **207 contacts** across 7 markets — all real phone numbers, all verified
+- Markets: Miami (79), Jacksonville Beach (35), Galveston TX (44), Key West (25), Destin FL (20), Gatlinburg TN (3), Fort Lauderdale (1)
+- Format: `phone_number`, `city`, `number_of_units=5`
+- All E.164 format, no fake +1792 numbers
+
+### ✅ Miami Leads (smaller list, also ready)
+- **File:** `C:\Users\samth\Downloads\miami_leads_elevenlabs_v2.csv`
+- 25 valid contacts (area codes 786, 305, 407, 954, 856, 321)
+- Stripped 76 fake +1792 numbers from original list
+
+### ⏳ Tampa — Blocked on Skip Trace
+- Original list: 99 numbers, ALL fake +1792 (792 is not a real US area code)
+- RentCast Tampa: 500 active listings, zero phone numbers in API response
+- Craigslist Tampa: landlords don't include phones in listing text (confirmed with Playwright)
+- **Fix:** Upload `C:\Users\samth\Downloads\tampa_addresses_skiptrace.csv` to **batchskiptracing.com**
+- Tampa real area codes: 813, 727
+
+---
+
+## Key Discovery: The +1792 Fake Number Pattern
+
+**This keeps appearing — learn to spot it fast:**
+- Area code 792 does not exist in the North American Numbering Plan
+- Any bulk list with lots of +1792 numbers = trash, skip entirely
+- Source: Craigslist spam farms embed these in listing text
+- Fix: Added `792` to the blocked area codes in `batch_national_scrape.py`
+
+---
+
+## How the 207 Numbers Were Found
+
+**Script:** `C:\Users\samth\miami-arbitrage\scripts\batch_national_scrape.py`  
+**Method:** RentCast API → `listingAgent.phone` + `listingOffice.phone` fields  
+**Changes made today:**
+- `TARGET` bumped from 100 → 200
+- Blocked area code 792 in `normalize_phone()`
+- Added `number_of_units` column to ElevenLabs CSV output
+- `TOP_MARKETS` cap raised from 80 → 120
+- Final run searched all 532 markets — hit 200+ phones in just 17 API calls
+
+**Key insight:** Not all markets populate phone fields in RentCast. The markets that do are mostly active tourist/vacation markets where licensed real estate agents manage rental listings.
+
+---
+
+## ElevenLabs Batch CSV Format (Confirmed Working)
+
+```csv
+phone_number,city,number_of_units
++17863290972,Miami,5
+```
+
+**Rules:**
+- Phone format: E.164 — `+1` + 10 digits, no spaces (`+17863290972`)
+- Only include columns that match dynamic variables defined in your agent prompt
+- Your agent requires: `city` + `number_of_units`
+- Do NOT add `language`, `voice_id`, `first_message`, `prompt` unless overrides are enabled in agent settings
+- Upload via ElevenLabs → Conversational AI → Batch Calling → Upload CSV
+
+---
+
+## Key Files
+
+| File | Status | Purpose |
+|------|--------|---------|
+| `Downloads/national_leads_elevenlabs_v2.csv` | ✅ **Upload tomorrow** | 207 contacts for ElevenLabs |
+| `Downloads/national_leads_phones_v2.csv` | ✅ Ready | Full data (address, rent, market, source) |
+| `Downloads/miami_leads_elevenlabs_v2.csv` | ✅ Ready | 25 Miami contacts for ElevenLabs |
+| `Downloads/tampa_addresses_skiptrace.csv` | ⏳ Upload to BatchSkipTracing | 500 Tampa addresses |
+| `miami-arbitrage/scripts/batch_national_scrape.py` | Updated today | Run to get more numbers |
+
+---
+
+## Pending Actions
+
+1. **Upload `national_leads_elevenlabs_v2.csv`** to ElevenLabs → Batch Calling → fire 207 calls
+2. **Skip trace Tampa** → batchskiptracing.com → upload `tampa_addresses_skiptrace.csv` → download results → send to Claude to format
+3. **Fix ElevenLabs broken tool reference** → agent `agent_4801kpp6506efqhv1n4v62w555bs` → Leave Voicemail node → remove `voicemail_detection` tool reference (carried over from Apr 22)
+
+---
+
+## How To Run Cold Caller (DealScout Auto Call)
+
+```
+Terminal 1: cd C:\Users\samth\miami-arbitrage && .\ngrok.exe http 5001
+Terminal 2: cd C:\Users\samth\miami-arbitrage && python server.py
+Terminal 3: cd C:\Users\samth\miami-arbitrage && streamlit run app.py
+```
+
+All credentials load from `.env` automatically. ngrok URL is static: `https://populace-fantasize-tightrope.ngrok-free.dev`
+
+---
+
+## Credentials Quick Ref
+
+| Service | Value |
+|---------|-------|
+| RentCast API key | `0e394cd1cacc42fab97b2246027802ea` |
+| ElevenLabs Agent ID | `agent_4801kpp6506efqhv1n4v62w555bs` |
+| Twilio From Number | `+17753695206` |
+| All other keys | `C:\Users\samth\miami-arbitrage\.env` |
+
+---
+
+## Tomorrow's Focus
+
+1. Upload `national_leads_elevenlabs_v2.csv` to ElevenLabs — launch 207-call campaign
+2. Fix ElevenLabs Leave Voicemail broken tool reference
+3. Skip trace Tampa via batchskiptracing.com
+4. Review call results / recordings from today's batch
+
+
+---
+## Session summary from claude-memory-main (merged 2026-05-14)
+
+# ðŸ“… April 24, 2026
+
+## ðŸŽ¯ Today's Goals
+
+### ðŸ”¥ Must Do
+- [ ] Skip trace Tampa addresses via BatchSkipTracing.com (free credits)
+- [ ] Get 100 valid Tampa phone numbers and format for ElevenLabs batch call
+- [ ] Fix ElevenLabs workflow broken tool references (Leave Voicemail + Live Pitch nodes) â€” carried over from Apr 22
+
+### ðŸ“ˆ Should Do
+- [ ] Test full call flow end to end (Auto Call â†’ ElevenLabs pitches â†’ recording plays back)
+- [ ] Run DealScout Listing Scout for Tampa to see available deals
+
+---
+
+## ðŸ“‹ What We Did Today
+
+### ElevenLabs Batch Calling â€” Miami
+- Uploaded `miami_leads_elevenlabs.csv` (101 rows from RentCast)
+- Fixed missing `number_of_units` variable (fixed value = 5)
+- Removed 76 fake `+1792` numbers â€” kept 25 valid numbers (area codes 786, 305, 407, 954, 856, 321)
+- Final file: `C:\Users\samth\Downloads\miami_leads_elevenlabs_v2.csv` (25 contacts, ready to upload)
+
+### ElevenLabs Batch Calling â€” Tampa
+- Original Tampa list had 99 numbers â€” ALL were fake `+1792` area code (792 is not a real US area code)
+- Tried RentCast API for Tampa â†’ 500 listings returned but **none had phone numbers** (Tampa agents don't populate agent/office phone fields)
+- Tried Craigslist scraping (requests + Playwright) â†’ Tampa landlords don't post phones in listing text
+- **Solution:** exported 500 Tampa property addresses from RentCast for skip tracing
+- File: `C:\Users\samth\Downloads\tampa_addresses_skiptrace.csv` (500 addresses, ready for BatchLeads/BatchSkipTracing)
+
+### ElevenLabs CSV Format (confirmed working)
+Required columns: `phone_number`, `city`, `number_of_units`
+- Phone format: E.164 (`+17863573199`)
+- Do NOT include: `language`, `voice_id`, `first_message`, `prompt` unless those overrides are enabled in agent settings
+- `city` and `number_of_units` must match the dynamic variables defined in your ElevenLabs agent prompt
+
+---
+
+## ðŸ”— Key Files
+
+| File | Purpose |
+|------|---------|
+| `C:\Users\samth\Downloads\miami_leads_elevenlabs_v2.csv` | 25 valid Miami contacts for ElevenLabs |
+| `C:\Users\samth\Downloads\tampa_addresses_skiptrace.csv` | 500 Tampa addresses for BatchSkipTracing |
+| `C:\Users\samth\Downloads\tampa_contacts.csv` | Tampa contacts (currently empty of valid numbers â€” replace after skip trace) |
+
+---
+
+## ðŸ”‘ Pending
+
+- [ ] Upload `tampa_addresses_skiptrace.csv` to **batchskiptracing.com** â†’ skip trace â†’ download results
+- [ ] Send results file to Claude â†’ filter + format for ElevenLabs
+- [ ] Fix ElevenLabs agent workflow broken tool references
+
+---
+
+## ðŸ’¡ Notes
+
+- **Tampa real area codes:** 813, 727
+- **Miami real area codes:** 786, 305, 321, 407, 954
+- **BatchSkipTracing.com** = same company as BatchLeads, new accounts get free credits
+- RentCast API key: `[REDACTED-TwilioAuth]` (same as before)
+- ElevenLabs Agent ID: `agent_4801kpp6506efqhv1n4v62w555bs`
+
