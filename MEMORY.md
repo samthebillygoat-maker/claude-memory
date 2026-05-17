@@ -4,6 +4,9 @@
 - [About Me](Areas/About Me.md) — non-technical, Windows 11, entrepreneurial, action-oriented, brief communicator, wants Claude to ask questions before diving in
 
 ## Projects
+- [Friday Pack — Miami First Send](project_friday_pack_miami_first_send.md) — 2026-05-15 1:30am: 65-lead Miami pack drafted to Tabare Sotomayor (tabaresotomayor@gmail.com); affiliate deal closed verbally 5/14; pack zipped on Desktop
+- [Friday Pack Pipeline Learnings](feedback_friday_pack_pipeline_learnings.md) — 17 hard-won lessons from the v1.0 build; geo gate / fake-owner LLM rejection / CL sAPI epoch math / MD-PA API gotchas
+- [Friday Pack v1.1 Pipeline Plan](plan_friday_pack_v11_pipeline.md) — one-command orchestrator spec; consolidates 6 harvests + merge + group + enrich + build + zip into single `make_friday_pack.py --group miami_metro`
 - [Miami Airbnb Arbitrage](Projects/Miami Airbnb Arbitrage.md) — City Side Stays (citysidestays.com), national STR arbitrage, DealScout tool at C:\Users\samth\miami-arbitrage
 - [ElevenLabs Batch Calling](Projects/ElevenLabs Batch Calling.md) — AI cold calling landlords via ElevenLabs + Twilio; 207 numbers ready; CSV format + known issues documented
 - [Hiring Tool](Projects/Hiring Tool.md) — Gmail-based resume screener, planning stage
