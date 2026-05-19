@@ -7,7 +7,13 @@ created: 2026-05-19
 
 # Multi-Market Friday Packs — 2026-05-19
 
-## FINAL Outcome (2026-05-19 multi-wave session)
+## LATEST Outcome (post wave 18, 2026-05-19)
+
+**87 sellable 50-lead Friday Packs delivered** + **23 near-50 packs** across 300 markets attempted in 18 parallel scrape waves. **5,392 total leads in the combined master CSV across 110 sellable markets (40+).** Built via HomeHarvest pipeline (Realtor.com / Redfin / Zillow MLS).
+
+**Pipeline reality-checked 2026-05-19** — caught and fixed: "Top Producer AWS Customer" placeholder, ® trademark = brokerage, 55+ community auto-reject, brokerage-in-owner-name detection. See [[feedback_lead_pack_scoring_fixes_2026-05-19]].
+
+## Earlier Outcome (post wave 8)
 
 **30 sellable 50-lead Friday Packs delivered** + **7 near-50 packs** across 103 markets attempted. **1,812 total leads in the combined master CSV.** Built via HomeHarvest pipeline (Realtor.com / Redfin / Zillow MLS) in 8 parallel scrape waves.
 
