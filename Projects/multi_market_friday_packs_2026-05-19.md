@@ -7,15 +7,50 @@ created: 2026-05-19
 
 # Multi-Market Friday Packs — 2026-05-19
 
-## Outcome (UPDATED late session)
+## FINAL Outcome (2026-05-19 multi-wave session)
 
-**15 sellable 50-lead Friday Packs delivered** across STR-permissive markets nationally. **1,195+ fresh phones** total across 36 attempted markets. All deduped against prior pulls. Built via HomeHarvest pipeline (Realtor.com / Redfin / Zillow MLS).
+**30 sellable 50-lead Friday Packs delivered** + **7 near-50 packs** across 103 markets attempted. **1,812 total leads in the combined master CSV.** Built via HomeHarvest pipeline (Realtor.com / Redfin / Zillow MLS) in 8 parallel scrape waves.
 
-**Master index CSV:** `data/MASTER_friday_packs_index_2026-05-19.csv`
+**Master files:**
+- Index summary: `data/MASTER_friday_packs_index_2026-05-19.csv` (all 103 markets with counts)
+- Combined all-sellable: `data/MASTER_all_friday_packs_combined_2026-05-19.csv` (1,812 leads, grep-friendly)
+- Per-market: `data/friday_pack_<slug>_2026-05-19.csv` (one per market)
 
-**Full sellable pack list (50 leads each):** Miami, Fort Lauderdale, Scottsdale, Austin Suburbs, Phoenix, Tempe, Naples, Fort Myers, Cape Coral, Boca Raton, Delray Beach, Frisco/Plano TX, Henderson NV, Las Vegas NV, Houston TX
+### 30 FULL 50-Packs (sellable)
 
-**Near-50 (44-49 leads each):** Mesa AZ, Sarasota FL, Atlanta North GA, Charlotte NC
+**Florida (12):** Miami (Aventura/SIB/NMB), Fort Lauderdale, Naples, Fort Myers, Cape Coral, Boca Raton, Delray Beach, Jacksonville, Ocala, Vero Beach, St Petersburg, Clearwater, Bradenton, Cocoa Beach, St Augustine, Tampa Urban — wait counting: Miami, FtL, Naples, FortMyers, CapeCoral, Boca, Delray, Jax, Ocala, VeroBeach, StPete, Clearwater, Bradenton, CocoaBeach, StAug, TampaUrban = 16 FL packs
+
+**Texas (6):** Austin Suburbs, Dallas, Fort Worth, Frisco/Plano, Houston, San Antonio
+
+**Arizona (3):** Phoenix, Scottsdale, Tempe
+
+**Tennessee (1):** Nashville Suburbs (Brentwood/Franklin)
+
+**Nevada (2):** Henderson, Las Vegas
+
+**Louisiana (1):** New Orleans
+
+**Virginia (1):** Northern Virginia (DC suburbs)
+
+### 7 NEAR-50 packs (40-49 leads)
+
+Galveston TX (48), Charlotte NC (47), Mesa AZ (47), Atlanta North GA (45), Sarasota FL (45), Lakeland FL (40), Long Beach CA (40)
+
+### Markets that didn't yield (use different pipeline next time)
+
+**Vacation/resort with thin long-term MLS:** Gulf Shores AL, Gatlinburg TN, Branson MO, Destin FL, Pensacola FL, Outer Banks NC, Hilton Head SC, Key West FL, Marco Island FL, Cape Cod MA, Sedona AZ, Park City UT
+
+**Midwest/traditional secondary markets — weak STR demand:** Madison WI, Milwaukee WI, Minneapolis MN, Grand Rapids MI, Cleveland OH, Cincinnati OH, Columbus OH, Pittsburgh PA, Boise ID, Salt Lake City UT, Provo UT, Spokane WA, Sacramento CA
+
+**Markets that returned 0:** Boise ID, Asheville NC, Salt Lake City UT (2 only), Sacramento CA (1 only), Provo UT (1), Cape Cod MA (1), Burlington VT (2)
+
+### Pattern observed
+- **50/50 STRONG packs** (highest quality, all SFH/duplex named individuals): Austin Suburbs, Cape Coral, Houston, Henderson, Las Vegas, Frisco/Plano, Phoenix
+- **AZ state STR pre-emption** = consistently strong yields (Phoenix, Scottsdale, Tempe sellable; Mesa near-50; Tucson partial)
+- **TX state STR pre-emption** = excellent yields (all 6 TX markets sellable)
+- **FL coastal + suburbs** = excellent yields (16 sellable FL packs)
+- **Coastal vacation MICRO-markets** = pipeline mismatch (need VRBO/MLS-for-sale instead)
+- **Restrictive states** (CA cities mostly, OR, NY) = thin pools, agent-heavy
 
 | Market | Pack file | Strong | Standard | HOA-screen |
 |---|---|---|---|---|
