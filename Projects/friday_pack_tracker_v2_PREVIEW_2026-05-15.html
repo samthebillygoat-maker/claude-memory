@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Friday Pack — Miami Metro — Week of 14 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Pulled from thefridaypack.com computed styles */
+  --bg:#0A0A0A;          /* page */
+  --surface:#121212;     /* darker bands */
+  --surface-2:#161616;   /* card */
+  --surface-3:#1C1C1A;   /* inset blocks */
+  --ivory:#FAF9F6;
+  --muted:#B0B0AA;
+  --dim:#9A9A95;
+  --rule:rgba(250,249,246,.08);
+  --rule-strong:rgba(250,249,246,.16);
+  --green:#1C3F2E;       /* primary CTA */
+  --green-2:#26553E;
+  --green-soft:rgba(28,63,46,.30);
+  --amber:#E8A33D;       /* secondary CTA / highlight */
+  --amber-ink:#0A0A0A;
+  --amber-soft:rgba(232,163,61,.14);
+  --red-soft:rgba(220,80,80,.12);
+  --red:#E59090;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:0}
+button:focus-visible,a:focus-visible,summary:focus-visible,textarea:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg); color:var(--ivory);
+  line-height:1.5; padding:0 24px 80px;
+  -webkit-font-smoothing:antialiased;
+  font-size:14px; font-weight:400;
+}
+.wrap{max-width:1040px;margin:0 auto;padding-top:32px}
+
+/* ---------- hero banner ---------- */
+.banner{
+  border:none; background:none; padding:8px 0 24px;
+  margin-bottom:8px; border-bottom:1px solid var(--rule);
+  position:relative;
+}
+.wordmark{
+  font-family:'Inter',sans-serif;
+  font-size:11px; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--dim); margin-bottom:14px;
+}
+.banner h1{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:68px; font-weight:300; color:var(--ivory);
+  letter-spacing:-.025em; line-height:1.02;
+  font-feature-settings:"ss01";
+}
+.banner h1 .sep{color:var(--dim);font-weight:300;margin:0 .25em}
+.banner .meta{
+  color:var(--muted); font-size:14px; margin-top:14px;
+  max-width:62ch; line-height:1.55;
+}
+.counter{
+  display:inline-block;
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11px; color:var(--muted);
+  background:transparent;
+  border:1px solid var(--rule-strong);
+  padding:8px 14px;
+  margin-top:18px;
+  letter-spacing:.06em; text-transform:uppercase;
+}
+.counter b{color:var(--ivory);font-weight:500;margin:0 4px;font-size:13px}
+
+/* ---------- intro ---------- */
+.intro{
+  border:none; background:none; box-shadow:none;
+  padding:24px 0 28px; margin-bottom:0;
+  border-bottom:1px solid var(--rule);
+  font-size:14px; color:var(--muted); line-height:1.65;
+  max-width:68ch;
+}
+.intro b{color:var(--ivory);font-weight:500}
+
+/* ---------- controls ---------- */
+.controls{
+  display:flex; gap:6px; margin:28px 0 8px; flex-wrap:wrap;
+  align-items:center;
+}
+.controls button{
+  background:transparent; border:1px solid var(--rule-strong);
+  color:var(--muted);
+  padding:10px 18px; border-radius:0;
+  cursor:pointer; font-size:13px; font-weight:500; font-family:inherit;
+  letter-spacing:.01em;
+  transition:all .15s ease;
+}
+.controls button:hover{border-color:var(--ivory);color:var(--ivory)}
+.controls button.active{
+  background:var(--ivory); border-color:var(--ivory); color:var(--bg);
+  font-weight:600;
+}
+.controls button.export{
+  background:var(--green); border-color:var(--green); color:var(--ivory);
+  font-weight:500;
+}
+.controls button.export:hover{background:var(--green-2);border-color:var(--green-2)}
+.controls::after{
+  content:"Tap a phone number to call. Status saves to this browser.";
+  flex-basis:100%; order:99;
+  font-size:12px; color:var(--dim);
+  padding:10px 0 18px;
+  letter-spacing:.01em;
+}
+
+/* ---------- card grid ---------- */
+.grid{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule)}
+.card{
+  background:transparent;
+  border:none; border-bottom:1px solid var(--rule); border-radius:0;
+  padding:28px 0;
+  display:grid;
+  grid-template-columns:60px 1fr 280px;
+  grid-template-areas:
+    "rank head    phone"
+    "rank owner   phone"
+    "rank tags    phone"
+    "rank addr    phone"
+    "rank why     why"
+    "rank script  script"
+    "rank actions actions"
+    "rank notes   notes";
+  gap:10px 24px;
+  align-items:start;
+  box-shadow:none;
+  position:relative;
+  transition:opacity .15s ease;
+}
+.card::before{display:none}
+.card.done{opacity:.4}
+.card.hidden{display:none}
+
+.card-head{
+  grid-area:head;
+  display:flex; justify-content:space-between; align-items:center;
+  gap:10px; flex-wrap:wrap;
+  border-bottom:1px solid var(--rule); padding-bottom:10px; margin-bottom:4px;
+}
+.card-title{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+
+/* Rank lives in its own column, large editorial number */
+.rank-badge{
+  grid-area:rank;
+  display:block; align-self:start;
+  background:transparent;
+  color:rgba(250,249,246,.55);
+  padding:0;
+  font-family:'Fraunces',Georgia,serif;
+  font-size:60px; font-weight:300;
+  letter-spacing:-.025em;
+  line-height:.95;
+  font-variant-numeric:tabular-nums;
+}
+.card.done .rank-badge{color:var(--dim)}
+
+.score-tag{
+  background:transparent; color:var(--muted);
+  padding:0;
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11px; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase;
+}
+.score-tag::before{content:"• ";color:var(--dim)}
+.entity-tag{
+  background:transparent; color:var(--amber);
+  border:1px solid rgba(232,163,61,.4);
+  padding:2px 8px; border-radius:0;
+  font-family:'Inter',sans-serif;
+  font-size:10px; font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase;
+}
+.props{
+  color:var(--dim); font-size:12px; font-weight:400;
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  letter-spacing:.02em;
+}
+.status{
+  font-family:'Inter',sans-serif;
+  font-size:11px; color:var(--dim); font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase;
+  white-space:nowrap;
+}
+.card.done .status{color:var(--amber)}
+
+.owner{
+  grid-area:owner;
+  font-family:'Fraunces',Georgia,serif;
+  color:var(--ivory); font-weight:400; font-size:26px;
+  letter-spacing:-.015em; line-height:1.15;
+}
+.tags{grid-area:tags; display:flex;flex-wrap:wrap;gap:6px}
+/* override inline tag styles from build script */
+.tags span{
+  background:transparent !important; color:var(--muted) !important;
+  padding:2px 8px !important; border-radius:0 !important;
+  font-family:'Inter',sans-serif !important;
+  font-size:10px !important; font-weight:600 !important;
+  letter-spacing:.12em !important; text-transform:uppercase !important;
+  border:1px solid var(--rule-strong) !important;
+}
+
+.addr-block{
+  grid-area:addr;
+  color:var(--muted); font-size:13px; line-height:1.6;
+  background:transparent;
+  padding:0;
+  border:none;
+  word-break:break-word;
+  font-family:'Inter',sans-serif;
+}
+.addr-block span{color:var(--dim) !important;font-size:11px !important;font-style:italic}
+.addr-block .addr-line{padding:2px 0}
+.addr-block.links-only{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.addr-block .link-btn{margin:0}
+.addr-block .addr-more{flex-basis:100%;color:var(--dim);font-size:11px;margin-top:4px}
+.addr-block.has-source-link{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.addr-block.has-source-link .addr-line{flex:1 1 200px;padding:0;min-width:0}
+.addr-block .addr-link-btn{flex:0 0 auto}
+@media (min-width:480px){.addr-block .addr-link-btn{margin-left:auto}}
+
+/* PRIMARY: phone CTA. Site-CTA scale, mono numerals. */
+.big-phone{
+  grid-area:phone;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  background:var(--green); color:var(--ivory) !important;
+  text-decoration:none;
+  padding:14px 22px; border-radius:0;
+  font-size:16px; font-weight:500;
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  letter-spacing:.01em;
+  border:none;
+  align-self:start;
+  transition:background .15s ease;
+  min-height:44px;
+}
+.big-phone:hover{background:var(--green-2)}
+.big-phone:active{background:#163326}
+
+/* "no phone" fallback */
+.card > div[style*="No phone"]{
+  grid-area:phone !important;
+  background:transparent !important; color:var(--muted) !important;
+  border:1px dashed var(--rule-strong) !important; border-radius:0 !important;
+  padding:22px 20px !important; font-size:13px !important;
+  font-family:'Inter',sans-serif !important;
+}
+
+.why{
+  grid-area:why;
+  color:var(--ivory); font-size:14px; line-height:1.6;
+  background:transparent;
+  padding:0;
+  border:none;
+  margin-top:2px;
+}
+.why b{
+  color:var(--amber); font-weight:600; font-size:10.5px;
+  letter-spacing:.14em; text-transform:uppercase;
+  display:block; margin-bottom:4px;
+  font-family:'Inter',sans-serif;
+}
+
+/* script / collapsible */
+.script{
+  grid-area:script;
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:0;
+  margin-top:6px;
+}
+.script summary{
+  padding:14px 16px; cursor:pointer;
+  font-family:'Inter',sans-serif;
+  font-size:11px; color:var(--muted); font-weight:600;
+  list-style:none; display:flex; align-items:center; gap:10px;
+  user-select:none;
+  letter-spacing:.14em; text-transform:uppercase;
+}
+.script summary::-webkit-details-marker{display:none}
+.script summary::before{
+  content:"+"; display:inline-block;
+  color:var(--amber); font-size:14px; line-height:1; font-weight:400;
+  width:12px; text-align:center;
+}
+.script[open] summary::before{content:"−"}
+.script summary:hover{color:var(--ivory)}
+.script-body{
+  padding:0 16px 16px; display:flex; flex-direction:column; gap:12px;
+  font-size:13.5px; color:var(--muted); line-height:1.65;
+}
+.script-block{
+  background:transparent; padding:12px 0 0;
+  border:none; border-top:1px solid var(--rule);
+  border-radius:0; line-height:1.65;
+}
+.script-block:first-child{border-top:none;padding-top:4px}
+.script-block b{
+  color:var(--amber); display:block; margin-bottom:6px;
+  font-family:'Inter',sans-serif;
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  font-weight:600;
+}
+.script-block a{color:var(--amber) !important;text-decoration:none;font-weight:500}
+.script-block a:hover{text-decoration:underline}
+
+/* action buttons — squared, ghost on dark */
+.actions{grid-area:actions;display:flex; gap:6px; flex-wrap:wrap; margin-top:10px}
+.actions button{
+  flex:1; min-width:120px;
+  background:transparent; border:1px solid var(--rule-strong);
+  color:var(--muted);
+  padding:11px 14px; border-radius:0;
+  cursor:pointer; font-size:12px; font-weight:500;
+  font-family:inherit; letter-spacing:.02em;
+  transition:all .12s ease;
+}
+.actions button:hover{border-color:var(--ivory);color:var(--ivory)}
+/* All action buttons share the ghost style — no color-coded variants. */
+.actions button.green,
+.actions button.blue,
+.actions button.red,
+.actions button.vm,
+.actions button.followup{
+  background:transparent; color:var(--muted); border-color:var(--rule-strong);
+}
+.actions button.green:hover,
+.actions button.blue:hover,
+.actions button.red:hover,
+.actions button.vm:hover,
+.actions button.followup:hover{
+  background:transparent; color:var(--ivory); border-color:var(--ivory);
+}
+.link-btn{
+  display:inline-block;
+  background:transparent; color:var(--amber) !important;
+  border:1px solid rgba(232,163,61,.4);
+  padding:6px 14px; border-radius:0;
+  font-family:'Inter',sans-serif !important;
+  font-size:11px; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase;
+  text-decoration:none !important;
+}
+.link-btn:hover{background:var(--amber-soft);color:var(--ivory) !important;border-color:var(--amber)}
+.actions button.reset{
+  flex:0 0 auto; min-width:42px; padding:11px 14px;
+  color:var(--dim);
+}
+
+.user-notes{
+  grid-area:notes;
+  background:var(--surface);
+  border:1px solid var(--rule);
+  color:var(--ivory);
+  padding:12px 14px; border-radius:0;
+  font-size:13px; line-height:1.6;
+  font-family:inherit; resize:vertical; min-height:44px;
+  width:100%;
+  margin-top:6px;
+}
+.user-notes::placeholder{color:var(--dim)}
+.user-notes:focus{outline:none;border-color:var(--amber);box-shadow:none}
+
+.legend{
+  font-family:'Inter',sans-serif;
+  font-size:11px; color:var(--dim);
+  margin-top:48px; padding-top:24px;
+  border-top:1px solid var(--rule);
+  text-align:center; letter-spacing:.12em; text-transform:uppercase;
+  font-weight:500;
+}
+
+/* ---------- mobile ---------- */
+@media (max-width:820px){
+  body{padding:0 18px 60px}
+  .wrap{padding-top:20px}
+  .banner h1{font-size:38px;letter-spacing:-.02em}
+  .card{
+    grid-template-columns:42px 1fr;
+    grid-template-areas:
+      "rank head"
+      "rank owner"
+      "rank tags"
+      "rank addr"
+      "phone phone"
+      "why   why"
+      "script script"
+      "actions actions"
+      "notes notes";
+    gap:8px 16px;
+    padding:24px 0;
+  }
+  .rank-badge{font-size:28px}
+  .big-phone{font-size:20px;padding:18px 16px;margin-top:6px}
+  .owner{font-size:22px}
+  .actions button{min-width:0;flex:1 1 calc(33.33% - 4px);padding:12px 8px;min-height:44px}
+  .actions button.reset{flex:1 1 100%}
+}
+@media (max-width:480px){
+  .banner h1{font-size:30px}
+  .card{grid-template-columns:32px 1fr}
+  .rank-badge{font-size:22px}
+}
+
+/* ---------- print ---------- */
+@media print{
+  body{background:#fff;color:#000;padding:0}
+  .wrap::before,.controls,.actions,.user-notes,.counter{display:none !important}
+  .banner,.intro,.card{border-color:#bbb !important}
+  .card{page-break-inside:avoid;break-inside:avoid;padding:18px 0;display:block}
+  .card > *{display:block;margin-bottom:8px}
+  .rank-badge{color:#000;font-size:28px}
+  .owner,.banner h1{color:#000}
+  .big-phone{background:#fff !important;color:#000 !important;border:2px solid #000;font-size:20px;padding:14px}
+  .why{background:#faf3e0;color:#000;border-left-color:#000}
+  .why b{color:#000}
+  .script-body{display:flex !important}
+  .script,.script-block{background:#fff;border-color:#bbb}
+  .script summary::before{display:none}
+  .script-block b{color:#000}
+  a{color:#000 !important;text-decoration:none}
+  .legend{color:#000}
+}
+</style></head>
+<body>
+<div class="wrap">
+<div class="banner">
+<div class="wordmark">THE FRIDAY PACK</div>
+<h1>Miami, FL</h1>
+<div class="meta">Week of 14 May 2026 · 38 landlords · 38 with direct phone</div>
+<div class="counter"><b id="remaining">38</b>of <b>38</b>leads remaining</div>
+</div>
+
+<div class="intro">
+<b>How to use this pack.</b> One landlord per card — multi-listing owners collapsed. Click the phone. Mark the call. Notes save to this browser. CSV export when you're done.
+<br><br>
+<b>How we built it.</b> We scraped every STR-permissive Miami-Dade zip code this week. LLM-extracted the owner and phone from each listing body. Filtered by STR zoning, corporate-brand exclusion (Blueground, Invitation Homes, Progress Residential), fake-phone patterns, 30-day freshness. Collapsed every owner's listings into a single row. Ranked by likelihood to say yes. The number on each card is a callable decision-maker — owner, landlord, PM, or leasing contact — not a main line.
+</div>
+
+<div class="controls">
+<button class="active" data-filter="all" onclick="setFilter(this,'all')">All (38)</button>
+<button data-filter="phone" onclick="setFilter(this,'phone')">📞 With phone (38)</button>
+<button data-filter="open" onclick="setFilter(this,'open')">⚪ Not called</button>
+<button class="export" onclick="exportCSV()">⬇ Export CSV</button>
+<button onclick="if(confirm('Reset all status + notes?')){localStorage.removeItem(KEY);location.reload()}">🗑 Reset</button>
+</div>
+
+<div class="grid">
+
+<div class="card" data-id="fp1" data-rank="1" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#01</span>
+      <span class="score-tag">Score 95</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp1">⚪ Not called</div>
+  </div>
+  <div class="owner">Rich</div>
+  <div class="addr-block">324 Indiana St.</div>
+  <a href="tel:+19549256933" class="big-phone">📞 (954) 925-6933</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hollywood-beach-living-thats-clean/7929004935.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp1','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp1','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp1','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp1','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp1','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp1" placeholder="Call notes…" onchange="saveNotes('fp1', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp2" data-rank="2" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#02</span>
+      <span class="score-tag">Score 85</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp2">⚪ Not called</div>
+  </div>
+  <div class="owner">Owner</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/fort-lauderdale-furnished-2br-home/7932823969.html</div>
+  <a href="tel:+12392690709" class="big-phone">📞 (239) 269-0709</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/fort-lauderdale-furnished-2br-home/7932823969.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp2','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp2','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp2','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp2','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp2','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp2" placeholder="Call notes…" onchange="saveNotes('fp2', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp3" data-rank="3" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#03</span>
+      <span class="score-tag">Score 80</span>
+      
+      <span class="props">16 properties</span>
+    </div>
+    <div class="status" id="status-fp3">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-emodeled-apartment-in-the-heart/7929639139.html<br>https://miami.craigslist.org/apa/d/miami-spacious-bedroom-bath-unit/7933558311.html<br>https://miami.craigslist.org/apa/d/miami-beautiful-apartment-everything/7927416504.html<br>https://miami.craigslist.org/apa/d/miami-north-miami-spacious-bedroom/7927072137.html<br>https://miami.craigslist.org/apa/d/miami-beautiful-and-unique-bedroom-and/7928922454.html<br>https://miami.craigslist.org/apa/d/miami-amazing-apartment-completely/7933558982.html<br><span style='color:#6b7280;font-size:11px'>...and 10 more</span></div>
+  <a href="tel:+17864581990" class="big-phone">📞 (786) 458-1990</a>
+  <div class="why"><b>WHY:</b> 16-property portfolio (one call covers all)</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 16 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-emodeled-apartment-in-the-heart/7929639139.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp3','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp3','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp3','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp3','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp3','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp3" placeholder="Call notes…" onchange="saveNotes('fp3', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp4" data-rank="4" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#04</span>
+      <span class="score-tag">Score 80</span>
+      
+      <span class="props">7 properties</span>
+    </div>
+    <div class="status" id="status-fp4">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/hollywood-welcome-home-to-this-spacious/7928168545.html<br>https://miami.craigslist.org/apa/d/hollywood-beautiful-bedroom-bathroom/7927981280.html<br>https://miami.craigslist.org/apa/d/hollywood-very-bright-home-in-hollywood/7927974467.html<br>https://miami.craigslist.org/apa/d/hollywood-beautifully-furnished-bedroom/7927974501.html<br>https://miami.craigslist.org/apa/d/fort-lauderdale-one-story-single-family/7927974404.html<br>https://miami.craigslist.org/apa/d/fort-lauderdale-beautifully-fully/7925254444.html<br><span style='color:#6b7280;font-size:11px'>...and 1 more</span></div>
+  <a href="tel:+15615991948" class="big-phone">📞 (561) 599-1948</a>
+  <div class="why"><b>WHY:</b> 7-property portfolio (one call covers all)</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 7 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hollywood-welcome-home-to-this-spacious/7928168545.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp4','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp4','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp4','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp4','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp4','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp4" placeholder="Call notes…" onchange="saveNotes('fp4', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp5" data-rank="5" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#05</span>
+      <span class="score-tag">Score 75</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp5">⚪ Not called</div>
+  </div>
+  <div class="owner">Juan Jacobo</div>
+  <div class="addr-block">2780 NW 22 ST</div>
+  <a href="tel:+17863057960" class="big-phone">📞 (786) 305-7960</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-renovated-2br-1ba-detached-home/7931641008.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp5','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp5','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp5','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp5','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp5','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp5" placeholder="Call notes…" onchange="saveNotes('fp5', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp6" data-rank="6" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#06</span>
+      <span class="score-tag">Score 75</span>
+      
+      <span class="props">3 properties</span>
+    </div>
+    <div class="status" id="status-fp6">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/hallandale-huge-clean-bed-1bath/7929366341.html<br>https://miami.craigslist.org/apa/d/hallandale-huge-bedroom-bathroom/7925102186.html<br>https://miami.craigslist.org/apa/d/hallandale-huge-lakefront-bed-bath-apt/7928512791.html</div>
+  <a href="tel:+13053059669" class="big-phone">📞 (305) 305-9669</a>
+  <div class="why"><b>WHY:</b> 3 active vacancies under one owner</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 3 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hallandale-huge-clean-bed-1bath/7929366341.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp6','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp6','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp6','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp6','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp6','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp6" placeholder="Call notes…" onchange="saveNotes('fp6', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp7" data-rank="7" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#07</span>
+      <span class="score-tag">Score 75</span>
+      
+      <span class="props">4 properties</span>
+    </div>
+    <div class="status" id="status-fp7">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-great-and-large-unit-bedrooms/7928335230.html<br>https://miami.craigslist.org/apa/d/miami-completely-remodeled-bedroom/7928113005.html<br>https://miami.craigslist.org/apa/d/miami-north-miami-spacious-bedroom/7927072137.html<br>https://miami.craigslist.org/apa/d/miami-beautifully-renovated-unit/7927447894.html</div>
+  <a href="tel:+17864589900" class="big-phone">📞 (786) 458-9900</a>
+  <div class="why"><b>WHY:</b> 4 active vacancies under one owner</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 4 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-great-and-large-unit-bedrooms/7928335230.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp7','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp7','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp7','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp7','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp7','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp7" placeholder="Call notes…" onchange="saveNotes('fp7', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp8" data-rank="8" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#08</span>
+      <span class="score-tag">Score 75</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp8">⚪ Not called</div>
+  </div>
+  <div class="owner">Raffy</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/hollywood-beds-bath-house-for-rent/7926041607.html</div>
+  <a href="tel:+17542659081" class="big-phone">📞 (754) 265-9081</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hollywood-beds-bath-house-for-rent/7926041607.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp8','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp8','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp8','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp8','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp8','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp8" placeholder="Call notes…" onchange="saveNotes('fp8', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp9" data-rank="9" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#09</span>
+      <span class="score-tag">Score 70</span>
+      
+      <span class="props">2 properties</span>
+    </div>
+    <div class="status" id="status-fp9">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-beautiful-and-spacious-bedroom/7927901869.html<br>https://miami.craigslist.org/apa/d/north-miami-beach-renovated-charming-2/7928115417.html</div>
+  <a href="tel:+17864532288" class="big-phone">📞 (786) 453-2288</a>
+  <div class="why"><b>WHY:</b> 2 listings, same landlord</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 2 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-beautiful-and-spacious-bedroom/7927901869.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp9','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp9','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp9','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp9','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp9','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp9" placeholder="Call notes…" onchange="saveNotes('fp9', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp10" data-rank="10" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#10</span>
+      <span class="score-tag">Score 70</span>
+      
+      <span class="props">6 properties</span>
+    </div>
+    <div class="status" id="status-fp10">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-renovated-2bed-1bath/7929639978.html<br>https://miami.craigslist.org/apa/d/miami-first-floor-unit-freshly-painted/7927421790.html<br>https://miami.craigslist.org/apa/d/miami-spacious-bedroom-bath-unit/7933558311.html<br>https://miami.craigslist.org/apa/d/miami-welcome-to-this-stunning-gem/7927448586.html<br>https://miami.craigslist.org/apa/d/miami-house-for-rent-casa-en-renta/7933083009.html<br>https://miami.craigslist.org/apa/d/miami-casa-en-renta/7933084219.html</div>
+  <a href="tel:+17864581999" class="big-phone">📞 (786) 458-1999</a>
+  <div class="why"><b>WHY:</b> 6-property portfolio (one call covers all)</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 6 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-renovated-2bed-1bath/7929639978.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp10','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp10','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp10','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp10','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp10','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp10" placeholder="Call notes…" onchange="saveNotes('fp10', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp11" data-rank="11" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#11</span>
+      <span class="score-tag">Score 70</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp11">⚪ Not called</div>
+  </div>
+  <div class="owner">Rich Aube</div>
+  <div class="addr-block">324 Indiana St.</div>
+  <a href="tel:+19545349360" class="big-phone">📞 (954) 534-9360</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hollywood-everything-included-on-hlwd/7929004413.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp11','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp11','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp11','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp11','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp11','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp11" placeholder="Call notes…" onchange="saveNotes('fp11', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp12" data-rank="12" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#12</span>
+      <span class="score-tag">Score 70</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp12">⚪ Not called</div>
+  </div>
+  <div class="owner">Veronica</div>
+  <div class="addr-block">SE 2 avenue near Hallandale Bch Blvd</div>
+  <a href="tel:+19544010669" class="big-phone">📞 (954) 401-0669</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hallandale-hallandale-1-apt/7932848410.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp12','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp12','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp12','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp12','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp12','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp12" placeholder="Call notes…" onchange="saveNotes('fp12', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp13" data-rank="13" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#13</span>
+      <span class="score-tag">Score 65</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp13">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">980 ne near 170st</div>
+  <a href="tel:+13055210025" class="big-phone">📞 (305) 521-0025</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-section-welcome-apts-for-rent/7929735896.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp13','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp13','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp13','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp13','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp13','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp13" placeholder="Call notes…" onchange="saveNotes('fp13', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp14" data-rank="14" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#14</span>
+      <span class="score-tag">Score 65</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp14">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/hollywood-1-only-two-months-to-move-in/7927733969.html</div>
+  <a href="tel:+17037980669" class="big-phone">📞 (703) 798-0669</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hollywood-1-only-two-months-to-move-in/7927733969.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp14','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp14','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp14','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp14','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp14','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp14" placeholder="Call notes…" onchange="saveNotes('fp14', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp15" data-rank="15" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#15</span>
+      <span class="score-tag">Score 65</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp15">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/north-miami-beach-enovated-apartment/7927071203.html</div>
+  <a href="tel:+17864535511" class="big-phone">📞 (786) 453-5511</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/north-miami-beach-enovated-apartment/7927071203.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp15','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp15','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp15','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp15','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp15','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp15" placeholder="Call notes…" onchange="saveNotes('fp15', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp16" data-rank="16" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#16</span>
+      <span class="score-tag">Score 65</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp16">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-bed-bath-ne-63rd/7930501880.html</div>
+  <a href="tel:+17864531122" class="big-phone">📞 (786) 453-1122</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-bed-bath-ne-63rd/7930501880.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp16','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp16','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp16','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp16','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp16','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp16" placeholder="Call notes…" onchange="saveNotes('fp16', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp17" data-rank="17" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#17</span>
+      <span class="score-tag">Score 60</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp17">⚪ Not called</div>
+  </div>
+  <div class="owner">Rick</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-new-duplex-corner-lot-great-price/7928363583.html</div>
+  <a href="tel:+13057858183" class="big-phone">📞 (305) 785-8183</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-new-duplex-corner-lot-great-price/7928363583.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp17','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp17','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp17','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp17','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp17','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp17" placeholder="Call notes…" onchange="saveNotes('fp17', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp18" data-rank="18" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#18</span>
+      <span class="score-tag">Score 60</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp18">⚪ Not called</div>
+  </div>
+  <div class="owner">jesus</div>
+  <div class="addr-block">2380 NE 173 ST north miami beach fl 33160</div>
+  <a href="tel:+17865127227" class="big-phone">📞 (786) 512-7227</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/north-miami-beach-bedrooms-full-bath/7928871472.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp18','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp18','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp18','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp18','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp18','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp18" placeholder="Call notes…" onchange="saveNotes('fp18', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp19" data-rank="19" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#19</span>
+      <span class="score-tag">Score 60</span>
+      
+      <span class="props">2 properties</span>
+    </div>
+    <div class="status" id="status-fp19">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-all-utilities-included-bed-bath/7934211497.html<br>https://miami.craigslist.org/apa/d/miami-beautifully-remodeled-bedroom/7927422357.html</div>
+  <a href="tel:+17864535515" class="big-phone">📞 (786) 453-5515</a>
+  <div class="why"><b>WHY:</b> 2 listings, same landlord</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 2 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-all-utilities-included-bed-bath/7934211497.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp19','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp19','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp19','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp19','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp19','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp19" placeholder="Call notes…" onchange="saveNotes('fp19', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp20" data-rank="20" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#20</span>
+      <span class="score-tag">Score 60</span>
+      
+      <span class="props">2 properties</span>
+    </div>
+    <div class="status" id="status-fp20">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-beautiful-studio-for-rent-winston/7934054356.html<br>NW 37th Ave near NW 7th st</div>
+  <a href="tel:+13057850999" class="big-phone">📞 (305) 785-0999</a>
+  <div class="why"><b>WHY:</b> 2 listings, same landlord</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 2 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-beautiful-studio-for-rent-winston/7934054356.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp20','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp20','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp20','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp20','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp20','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp20" placeholder="Call notes…" onchange="saveNotes('fp20', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp21" data-rank="21" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#21</span>
+      <span class="score-tag">Score 55</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp21">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-all-utilities-included-bed-bath/7928367391.html</div>
+  <a href="tel:+17862850287" class="big-phone">📞 (786) 285-0287</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-all-utilities-included-bed-bath/7928367391.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp21','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp21','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp21','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp21','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp21','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp21" placeholder="Call notes…" onchange="saveNotes('fp21', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp22" data-rank="22" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#22</span>
+      <span class="score-tag">Score 55</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp22">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/hollywood-move-in-special-1stmonth/7934081381.html</div>
+  <a href="tel:+17864777000" class="big-phone">📞 (786) 477-7000</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hollywood-move-in-special-1stmonth/7934081381.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp22','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp22','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp22','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp22','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp22','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp22" placeholder="Call notes…" onchange="saveNotes('fp22', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp23" data-rank="23" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#23</span>
+      <span class="score-tag">Score 55</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp23">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-great-apartment-in-north-miami/7926087223.html</div>
+  <a href="tel:+13054676651" class="big-phone">📞 (305) 467-6651</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-great-apartment-in-north-miami/7926087223.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp23','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp23','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp23','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp23','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp23','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp23" placeholder="Call notes…" onchange="saveNotes('fp23', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp24" data-rank="24" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#24</span>
+      <span class="score-tag">Score 55</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp24">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-d-in-unit-bd-ba-minutes-to/7928208804.html</div>
+  <a href="tel:+17864588999" class="big-phone">📞 (786) 458-8999</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-d-in-unit-bd-ba-minutes-to/7928208804.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp24','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp24','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp24','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp24','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp24','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp24" placeholder="Call notes…" onchange="saveNotes('fp24', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp25" data-rank="25" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#25</span>
+      <span class="score-tag">Score 55</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp25">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">2068 East 7 Ave near East 7 Ave and 21 ST</div>
+  <a href="tel:+17864782080" class="big-phone">📞 (786) 478-2080</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hialeah-apto-1-bello-amplio-en-hialeah/7930144896.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp25','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp25','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp25','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp25','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp25','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp25" placeholder="Call notes…" onchange="saveNotes('fp25', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp26" data-rank="26" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#26</span>
+      <span class="score-tag">Score 50</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp26">⚪ Not called</div>
+  </div>
+  <div class="owner">Sun-May</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/fort-lauderdale-magnificent-2-for-rent/7933815533.html</div>
+  <a href="tel:+17864779287" class="big-phone">📞 (786) 477-9287</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/fort-lauderdale-magnificent-2-for-rent/7933815533.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp26','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp26','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp26','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp26','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp26','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp26" placeholder="Call notes…" onchange="saveNotes('fp26', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp27" data-rank="27" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#27</span>
+      <span class="score-tag">Score 45</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp27">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-move-in-ready-corner-lot-single/7927410947.html</div>
+  <a href="tel:+17864532287" class="big-phone">📞 (786) 453-2287</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-move-in-ready-corner-lot-single/7927410947.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp27','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp27','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp27','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp27','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp27','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp27" placeholder="Call notes…" onchange="saveNotes('fp27', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp28" data-rank="28" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#28</span>
+      <span class="score-tag">Score 40</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp28">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/hollywood-1-easy-approval-very-nice-and/7933790252.html</div>
+  <a href="tel:+17864588722" class="big-phone">📞 (786) 458-8722</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hollywood-1-easy-approval-very-nice-and/7933790252.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp28','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp28','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp28','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp28','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp28','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp28" placeholder="Call notes…" onchange="saveNotes('fp28', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp29" data-rank="29" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#29</span>
+      <span class="score-tag">Score 40</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp29">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-completely-remodeled-efficiency/7934122403.html</div>
+  <a href="tel:+17864588960" class="big-phone">📞 (786) 458-8960</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-completely-remodeled-efficiency/7934122403.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp29','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp29','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp29','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp29','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp29','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp29" placeholder="Call notes…" onchange="saveNotes('fp29', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp30" data-rank="30" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#30</span>
+      <span class="score-tag">Score 40</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp30">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-completely-remodeled-efficiency/7934122341.html</div>
+  <a href="tel:+17864585544" class="big-phone">📞 (786) 458-5544</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-completely-remodeled-efficiency/7934122341.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp30','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp30','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp30','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp30','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp30','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp30" placeholder="Call notes…" onchange="saveNotes('fp30', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp31" data-rank="31" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#31</span>
+      <span class="score-tag">Score 40</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp31">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">84 St near 132 Ave</div>
+  <a href="tel:+17863570051" class="big-phone">📞 (786) 357-0051</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-eficiensy-for-rent/7926030487.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp31','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp31','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp31','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp31','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp31','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp31" placeholder="Call notes…" onchange="saveNotes('fp31', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp32" data-rank="32" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#32</span>
+      <span class="score-tag">Score 35</span>
+      
+      <span class="props">2 properties</span>
+    </div>
+    <div class="status" id="status-fp32">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">2780 nw 22 st near 22 st<br>2965 nw 26 st near 26 st</div>
+  <a href="tel:+17866635518" class="big-phone">📞 (786) 663-5518</a>
+  <div class="why"><b>WHY:</b> 2 listings, same landlord</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 2 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-apartment-for-rent-apartamento-en/7933884669.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp32','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp32','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp32','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp32','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp32','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp32" placeholder="Call notes…" onchange="saveNotes('fp32', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp33" data-rank="33" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#33</span>
+      <span class="score-tag">Score 35</span>
+      
+      <span class="props">2 properties</span>
+    </div>
+    <div class="status" id="status-fp33">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-nw-77th-bedroom-apt-fast-approval/7933817053.html<br>https://miami.craigslist.org/apa/d/miami-nw-77-available-now/7929417988.html</div>
+  <a href="tel:+17864587890" class="big-phone">📞 (786) 458-7890</a>
+  <div class="why"><b>WHY:</b> 2 listings, same landlord</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 2 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-nw-77th-bedroom-apt-fast-approval/7933817053.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp33','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp33','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp33','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp33','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp33','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp33" placeholder="Call notes…" onchange="saveNotes('fp33', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp34" data-rank="34" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#34</span>
+      <span class="score-tag">Score 30</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp34">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/miami-bright-apartment-bedrooms-one/7927701500.html</div>
+  <a href="tel:+13057858181" class="big-phone">📞 (305) 785-8181</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-bright-apartment-bedrooms-one/7927701500.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp34','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp34','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp34','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp34','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp34','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp34" placeholder="Call notes…" onchange="saveNotes('fp34', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp35" data-rank="35" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#35</span>
+      <span class="score-tag">Score 30</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp35">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">43 street near 96 avenue</div>
+  <a href="tel:+13053033525" class="big-phone">📞 (305) 303-3525</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-1-for-rent/7927555647.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp35','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp35','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp35','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp35','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp35','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp35" placeholder="Call notes…" onchange="saveNotes('fp35', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp36" data-rank="36" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#36</span>
+      <span class="score-tag">Score 30</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp36">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">3 st sw 60 ave</div>
+  <a href="tel:+17864788866" class="big-phone">📞 (786) 478-8866</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-rento-efficiency/7932946695.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp36','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp36','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp36','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp36','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp36','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp36" placeholder="Call notes…" onchange="saveNotes('fp36', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp37" data-rank="37" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#37</span>
+      <span class="score-tag">Score 30</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp37">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">3149 Center St</div>
+  <a href="tel:+13057741507" class="big-phone">📞 (305) 774-1507</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/miami-1-house-for-rent-in/7932346222.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp37','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp37','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp37','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp37','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp37','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp37" placeholder="Call notes…" onchange="saveNotes('fp37', this.value)"></textarea>
+</div>
+
+<div class="card" data-id="fp38" data-rank="38" data-haspack="1">
+  <div class="card-head">
+    <div class="card-title">
+      <span class="rank-badge">#38</span>
+      <span class="score-tag">Score 30</span>
+      
+      <span class="props">1 property</span>
+    </div>
+    <div class="status" id="status-fp38">⚪ Not called</div>
+  </div>
+  <div class="owner">(unnamed landlord)</div>
+  <div class="addr-block">https://miami.craigslist.org/apa/d/hialeah-se-rental-appartment-in-east/7931867907.html</div>
+  <a href="tel:+17863449578" class="big-phone">📞 (786) 344-9578</a>
+  <div class="why"><b>WHY:</b> Single-listing owner-direct</div>
+  <details class="script">
+    <summary>📋 Suggested opener</summary>
+    <div class="script-body">
+      <div class="script-block"><b>OPENER:</b> Hey, I&#39;m calling because I saw you have 1 listings on Craigslist this week under the same number — that tells me you&#39;re self-managing a small portfolio. Before I tell you what I do, can I ask: is the goal eventually to add more units, or are you happy where you&#39;re at?</div>
+      <div class="script-block"><b>VALUE FRAME:</b> I run a corporate housing operation — I take vacant units on 12-24 month leases at fair market rent, pay deposit, handle furnishing, host traveling professionals 30+ day stays. You skip vacancy, skip relisting, skip turnover. One tenant relationship across your portfolio.</div>
+      <div class="script-block"><b>OBJECTION-READY:</b> &quot;Is this Airbnb?&quot; → &quot;Mostly traveling professionals — corporate relocations, traveling nurses, project workers. 30+ day stays per Florida 509.032. I carry full STR insurance and we sign a lease addendum so you have express consent in writing.&quot;</div>
+      <div class="script-block"><a href="https://miami.craigslist.org/apa/d/hialeah-se-rental-appartment-in-east/7931867907.html" target="_blank" style="color:#bfdbfe">🔗 Sample listing</a></div>
+    </div>
+  </details>
+  <div class="actions">
+    <button onclick="setStatus('fp38','📞 Called — left VM')" class="vm">💬 Left VM</button>
+    <button onclick="setStatus('fp38','📞 Talked — interested')" class="green">✅ Interested</button>
+    <button onclick="setStatus('fp38','📞 Talked — pitch sent')" class="blue">📧 Pitch sent</button>
+    <button onclick="setStatus('fp38','❌ Not interested')" class="red">❌ Pass</button>
+    <button onclick="setStatus('fp38','⚪ Not called')" class="reset">↺</button>
+  </div>
+  <textarea class="user-notes" id="notes-fp38" placeholder="Call notes…" onchange="saveNotes('fp38', this.value)"></textarea>
+</div>
+
+</div>
+
+<div class="legend">
+The Friday Pack · thefridaypack.com · Delivered 2026-05-14 · 38 landlords across Miami Metro
+</div>
+</div>
+
+<script>
+const KEY = "friday_pack_miami_metro_2026-05-14";
+const LEAD_IDS = ["fp1", "fp2", "fp3", "fp4", "fp5", "fp6", "fp7", "fp8", "fp9", "fp10", "fp11", "fp12", "fp13", "fp14", "fp15", "fp16", "fp17", "fp18", "fp19", "fp20", "fp21", "fp22", "fp23", "fp24", "fp25", "fp26", "fp27", "fp28", "fp29", "fp30", "fp31", "fp32", "fp33", "fp34", "fp35", "fp36", "fp37", "fp38"];
+const TOTAL = 38;
+let state = JSON.parse(localStorage.getItem(KEY) || '{}');
+let activeFilter = 'all';
+
+function save() { localStorage.setItem(KEY, JSON.stringify(state)); }
+function setStatus(id, status) {
+  state[id] = state[id] || {};
+  state[id].status = status;
+  save();
+  document.getElementById('status-'+id).textContent = status;
+  const card = document.querySelector(`.card[data-id="${id}"]`);
+  if (card) card.classList.toggle('done', status !== '⚪ Not called');
+  updateCounter();
+}
+function saveNotes(id, val) {
+  state[id] = state[id] || {};
+  state[id].notes = val;
+  save();
+}
+function updateCounter() {
+  let remaining = 0;
+  LEAD_IDS.forEach(id => {
+    const s = state[id] && state[id].status;
+    if (!s || s === '⚪ Not called') remaining++;
+  });
+  document.getElementById('remaining').textContent = remaining;
+}
+function setFilter(btn, f) {
+  document.querySelectorAll('.controls button[data-filter]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = f;
+  document.querySelectorAll('.card').forEach(c => {
+    const id = c.dataset.id;
+    const hasphone = c.dataset.haspack === '1';
+    const status = (state[id] && state[id].status) || '⚪ Not called';
+    let show = true;
+    if (activeFilter === 'all') show = true;
+    else if (activeFilter === 'open') show = status === '⚪ Not called';
+    else if (activeFilter === 'phone') show = hasphone;
+    c.classList.toggle('hidden', !show);
+  });
+}
+function exportCSV() {
+  let csv = 'rank,score,owner,phone,n_properties,addresses,status,notes\n';
+  document.querySelectorAll('.card').forEach(c => {
+    const id = c.dataset.id;
+    const rank = c.dataset.rank;
+    const score = c.querySelector('.score-tag') ? c.querySelector('.score-tag').textContent.replace('Score ','') : '';
+    const owner = c.querySelector('.owner').textContent.replace(/"/g,'""');
+    const phoneEl = c.querySelector('.big-phone');
+    const phone = phoneEl ? phoneEl.textContent.replace('📞 ','').trim() : '';
+    const props = c.querySelector('.props') ? c.querySelector('.props').textContent : '';
+    const addrs = c.querySelector('.addr-block').textContent.replace(/\s+/g,' ').replace(/"/g,'""');
+    const status = (state[id]&&state[id].status) || 'Not called';
+    const notes = ((state[id]&&state[id].notes) || '').replace(/"/g,'""');
+    csv += `"${rank}","${score}","${owner}","${phone}","${props}","${addrs}","${status}","${notes}"\n`;
+  });
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'friday-pack-' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+}
+LEAD_IDS.forEach(id => {
+  if (state[id]) {
+    if (state[id].status) {
+      document.getElementById('status-'+id).textContent = state[id].status;
+      const card = document.querySelector(`.card[data-id="${id}"]`);
+      if (card && state[id].status !== '⚪ Not called') card.classList.add('done');
+    }
+    if (state[id].notes) document.getElementById('notes-'+id).value = state[id].notes;
+  }
+});
+updateCounter();
+
+// v2 runtime tweaks. Run AFTER any DOM mutation so exportCSV's textContent reads
+// stay accurate even after we rewrite addr-block contents into Link buttons.
+(function v2Polish(){
+  // 1. Rebrand the "Sample listing" anchor inside the opener panel as a Link button.
+  document.querySelectorAll('.script-block a[href^="http"]').forEach(a => {
+    a.textContent = 'Link';
+    a.classList.add('link-btn');
+    a.removeAttribute('style');
+  });
+
+  // 2. Inside addr-block: replace bare URLs with Link buttons; preserve real
+  //    address lines and the trailing "...and N more" overflow text. BEFORE
+  //    mutating, stash the original textContent on dataset.csvAddrs so the CSV
+  //    export still has real addresses/URLs to write.
+  document.querySelectorAll('.addr-block').forEach(blk => {
+    // Preserve original text for CSV before any mutation
+    blk.dataset.csvAddrs = (blk.textContent || '').replace(/\s+/g,' ').trim();
+
+    const html = blk.innerHTML;
+    const parts = html.split(/<br\s*\/?>/i);
+    const pieces = [];
+    parts.forEach(p => {
+      const trimmed = p.trim();
+      if (!trimmed) return;
+      // The "...and N more" span may sit at the end of a chunk that also starts
+      // with a URL. Extract any span and process the leading content separately.
+      let span = '';
+      let head = trimmed;
+      const m = trimmed.match(/<span\b[\s\S]*?<\/span>\s*$/i);
+      if (m) {
+        span = m[0];
+        head = trimmed.slice(0, m.index).trim();
+      }
+      if (head) {
+        const tmp = document.createElement('div'); tmp.innerHTML = head;
+        const text = (tmp.textContent || '').trim();
+        if (/^https?:\/\//.test(text)) {
+          pieces.push(`<a href="${text}" target="_blank" rel="noopener" class="link-btn">Link</a>`);
+        } else {
+          pieces.push(`<div class="addr-line">${head}</div>`);
+        }
+      }
+      if (span) pieces.push(`<div class="addr-more">${span}</div>`);
+    });
+    blk.innerHTML = pieces.join('');
+    if (blk.querySelectorAll('.link-btn').length && !blk.querySelector('.addr-line')) {
+      blk.classList.add('links-only');
+    }
+  });
+
+  // 3. Surface the source listing Link button on every card (always visible —
+  //    not hidden behind the collapsed opener panel).
+  document.querySelectorAll('.card').forEach(card => {
+    const blk = card.querySelector('.addr-block');
+    if (!blk || blk.querySelector('.link-btn')) return;
+    const src = card.querySelector('.script-block a.link-btn');
+    if (!src) return;
+    const clone = src.cloneNode(true);
+    clone.classList.add('addr-link-btn');
+    blk.appendChild(clone);
+    blk.classList.add('has-source-link');
+  });
+
+  // 4. Inject the "Follow up" status button into every card's action row, and
+  //    label the reset button for screen readers.
+  document.querySelectorAll('.actions').forEach(act => {
+    const card = act.closest('.card');
+    if (!card) return;
+    const id = card.dataset.id;
+    const reset = act.querySelector('.reset');
+    if (reset && !reset.getAttribute('aria-label')) {
+      reset.setAttribute('aria-label', 'Reset this lead');
+      reset.setAttribute('title', 'Reset this lead');
+    }
+    if (act.querySelector('.followup')) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'followup';
+    btn.textContent = '📅 Follow up';
+    btn.onclick = () => setStatus(id, '📅 Follow up');
+    if (reset) act.insertBefore(btn, reset);
+    else act.appendChild(btn);
+  });
+
+  // 5. Inject a "Follow up" filter button so the new status is recallable, and
+  //    expose aria-pressed on every filter for screen readers.
+  const controls = document.querySelector('.controls');
+  if (controls && !controls.querySelector('button[data-filter="followup"]')) {
+    const fu = document.createElement('button');
+    fu.type = 'button';
+    fu.setAttribute('data-filter','followup');
+    fu.textContent = '📅 Follow up';
+    fu.onclick = function(){ setFilter(this, 'followup'); };
+    const exp = controls.querySelector('button.export');
+    if (exp) controls.insertBefore(fu, exp); else controls.appendChild(fu);
+  }
+  controls?.setAttribute('role','group');
+  controls?.setAttribute('aria-label','Filter leads');
+  function syncPressed(){
+    document.querySelectorAll('.controls button[data-filter]').forEach(b => {
+      b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
+    });
+  }
+  syncPressed();
+
+  // A11y: expose each owner row as a level-2 heading so screen-reader users
+  // can jump card-to-card via the headings list. Keeps the <div> intact.
+  document.querySelectorAll('.card .owner').forEach(el => {
+    el.setAttribute('role','heading');
+    el.setAttribute('aria-level','2');
+  });
+
+  // 6. Extend setFilter to know about the new 'followup' bucket. Wrap, don't
+  //    replace — preserves the existing function signature the build script
+  //    relies on (the contract).
+  const _origSetFilter = window.setFilter;
+  window.setFilter = function(btn, f){
+    if (f === 'followup') {
+      document.querySelectorAll('.controls button[data-filter]').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.card').forEach(c => {
+        const id = c.dataset.id;
+        const status = (state[id] && state[id].status) || '';
+        c.classList.toggle('hidden', !/Follow up/i.test(status));
+      });
+      syncPressed();
+      return;
+    }
+    _origSetFilter(btn, f);
+    syncPressed();
+  };
+
+  // 7. Patch exportCSV: read addresses from dataset.csvAddrs (preserves original
+  //    URLs/text) and prepend a UTF-8 BOM so Excel opens the file correctly.
+  const _origExport = window.exportCSV;
+  window.exportCSV = function(){
+    let csv = '﻿rank,score,owner,phone,n_properties,addresses,status,notes\n';
+    document.querySelectorAll('.card').forEach(c => {
+      const id = c.dataset.id;
+      const rank = c.dataset.rank;
+      const scoreEl = c.querySelector('.score-tag');
+      const score = scoreEl ? scoreEl.textContent.replace('Score ','').replace(/^•\s*/, '').trim() : '';
+      const owner = (c.querySelector('.owner')?.textContent || '').replace(/"/g,'""');
+      const phoneEl = c.querySelector('.big-phone');
+      const phone = phoneEl ? phoneEl.textContent.replace('📞 ','').trim() : '';
+      const props = c.querySelector('.props')?.textContent || '';
+      const addrBlk = c.querySelector('.addr-block');
+      const addrs = ((addrBlk && addrBlk.dataset.csvAddrs) || addrBlk?.textContent || '')
+        .replace(/\s+/g,' ').replace(/"/g,'""').trim();
+      const status = (state[id]&&state[id].status) || 'Not called';
+      const notes = ((state[id]&&state[id].notes) || '').replace(/"/g,'""');
+      csv += `"${rank}","${score}","${owner}","${phone}","${props}","${addrs}","${status}","${notes}"\n`;
+    });
+    const blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'friday-pack-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+  };
+})();
+</script>
+</body></html>
