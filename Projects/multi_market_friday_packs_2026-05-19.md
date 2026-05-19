@@ -7,9 +7,15 @@ created: 2026-05-19
 
 # Multi-Market Friday Packs — 2026-05-19
 
-## Outcome
+## Outcome (UPDATED late session)
 
-**4 sellable 50-lead Friday Packs delivered** across STR-permissive markets. **200 fresh phones** total. All deduped against prior pulls. Built via HomeHarvest pipeline (Realtor.com / Redfin / Zillow MLS).
+**15 sellable 50-lead Friday Packs delivered** across STR-permissive markets nationally. **1,195+ fresh phones** total across 36 attempted markets. All deduped against prior pulls. Built via HomeHarvest pipeline (Realtor.com / Redfin / Zillow MLS).
+
+**Master index CSV:** `data/MASTER_friday_packs_index_2026-05-19.csv`
+
+**Full sellable pack list (50 leads each):** Miami, Fort Lauderdale, Scottsdale, Austin Suburbs, Phoenix, Tempe, Naples, Fort Myers, Cape Coral, Boca Raton, Delray Beach, Frisco/Plano TX, Henderson NV, Las Vegas NV, Houston TX
+
+**Near-50 (44-49 leads each):** Mesa AZ, Sarasota FL, Atlanta North GA, Charlotte NC
 
 | Market | Pack file | Strong | Standard | HOA-screen |
 |---|---|---|---|---|
