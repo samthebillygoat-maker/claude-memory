@@ -1,134 +1,106 @@
----
-name: Multi-Market Friday Packs — 2026-05-19
-description: 4 fresh 50-lead Friday Packs built from HomeHarvest pipeline. Miami (Aventura/SIB/NMB), Fort Lauderdale, Scottsdale AZ, Austin Suburbs TX. Plus partial pulls for Gulf Shores + Gatlinburg vacation markets.
-type: project
-created: 2026-05-19
----
+﻿# Multi-Market Friday Pack Pipeline — 2026-05-19 Final State
 
-# Multi-Market Friday Packs — 2026-05-19
+## Pipeline Overview
+- **Script**: `C:\Users\samth\projects\landlord-outreach\scripts\multi_market_homeharvest.py` (scraper)
+- **Script**: `C:\Users\samth\projects\landlord-outreach\scripts\build_market_packs.py` (pack builder)
+- **Output**: `C:\Users\samth\projects\landlord-outreach\data\`
+- **Format**: `homeharvest_{slug}_{date}.csv` → `friday_pack_{slug}_{date}.csv`
+- **Python**: `.\.venv\Scripts\python.exe` (must use venv)
 
-## LATEST Outcome (post wave 18, 2026-05-19)
+## Waves Completed Through Tonight (Waves 43–45)
 
-**87 sellable 50-lead Friday Packs delivered** + **23 near-50 packs** across 300 markets attempted in 18 parallel scrape waves. **5,392 total leads in the combined master CSV across 110 sellable markets (40+).** Built via HomeHarvest pipeline (Realtor.com / Redfin / Zillow MLS).
+### Wave 43
+| Market | Phones | Pack | STRONG |
+|--------|--------|------|--------|
+| north_bergen_nj | 40 | 40 | 6 |
+| west_new_york_nj | 38 | 38 | 0 |
+| hoboken_nj | 31 | 31 | 4 |
+| chelsea_ma | 28 | 28 | 2 |
+| easton_pa | 24 | 24 | 5 |
+| wilkes_barre_pa | 20 | 20 | 5 |
+| conway_sc | 8 | 8 | 2 |
+| secaucus_nj | 13 | 13 | 0 |
+| Dead (0 phones) | roanoke_rapids_nc, tifton_ga, cordele_ga, sparta_tn, brownsville_tn, morgan_city_la, ponca_city_ok, hutchinson_ks, ottumwa_ia, palestine_tx |
 
-**Pipeline reality-checked 2026-05-19** — caught and fixed: "Top Producer AWS Customer" placeholder, ® trademark = brokerage, 55+ community auto-reject, brokerage-in-owner-name detection. See [[feedback_lead_pack_scoring_fixes_2026-05-19]].
+### Wave 44
+| Market | Phones | Pack | STRONG |
+|--------|--------|------|--------|
+| kissimmee_fl | 128 | 50 | 37 |
+| cambridge_ma | 111 | 50 | 9 |
+| brookline_ma | 83 | 50 | 6 |
+| watertown_ma | 41 | 41 | 12 |
+| asbury_park_nj | 35 | 35 | 8 |
+| arlington_ma | 30 | 30 | 7 |
+| white_plains_ny | 25 | 25 | 4 |
+| montclair_nj | 22 | 22 | 1 |
+| belmont_ma | 20 | 20 | 4 |
+| belleville_nj | 20 | 20 | 1 |
+| new_rochelle_ny | 17 | 17 | 0 |
+| torrington_ct | 16 | 16 | 2 |
+| harrison_nj | 15 | 15 | 0 |
+| portsmouth_va | 14 | 14 | 1 |
+| nutley_nj | 14 | 14 | 2 |
+| maplewood_nj | 12 | 12 | 0 |
+| bristol_ct | 15 | 15 | 0 |
+| mount_vernon_ny | 11 | 11 | 1 |
+| manchester_ct | 6 | 6 | 0 |
+| rahway_nj | 5 | 5 | 0 |
+| east_hartford_ct | 4 | 4 | 0 |
+| Dead | port_huron_mi, mount_pleasant_mi, lewiston_me, auburn_me |
 
-## Earlier Outcome (post wave 8)
+### Wave 45
+| Market | Phones | Pack | STRONG |
+|--------|--------|------|--------|
+| baltimore_md | 77 | 50 | 8 |
+| norwalk_ct | 35 | 35 | 8 |
+| stratford_ct | 24 | 24 | 2 |
+| towson_md | 18 | 18 | 1 |
+| pawtucket_ri | 16 | 16 | 0 |
+| red_bank_nj | 16 | 16 | 2 |
+| neptune_nj | 12 | 12 | 4 |
+| cranston_ri | 10 | 10 | 2 |
+| edison_nj | 11 | 11 | 2 |
+| freehold_nj | 11 | 11 | 1 |
+| piscataway_nj | 9 | 9 | 1 |
+| east_haven_ct | 8 | 8 | 1 |
+| port_chester_ny | 8 | 8 | 0 |
+| hempstead_ny | 5 | 5 | 0 |
+| enfield_ct | 5 | 5 | 1 |
+| sayreville_nj | 4 | 4 | 1 |
+| woonsocket_ri | 4 | 4 | 1 |
+| freeport_ny | 4 | 4 | 1 |
+| southington_ct | 3 | 3 | 0 |
+| bay_shore_ny | 3 | 3 | 0 |
+| central_islip_ny | 3 | 3 | 1 |
+| ossining_ny | 3 | 3 | 1 |
+| patchogue_ny | 3 | 3 | 0 |
+| peekskill_ny | 2 | 2 | 1 |
+| lakewood_nj | 6 | 6 | 1 |
+| brentwood_ny | 1 | 1 | 0 |
+| Dead | altoona_pa, johnstown_pa |
 
-**30 sellable 50-lead Friday Packs delivered** + **7 near-50 packs** across 103 markets attempted. **1,812 total leads in the combined master CSV.** Built via HomeHarvest pipeline (Realtor.com / Redfin / Zillow MLS) in 8 parallel scrape waves.
+## Wave 46 — Next Up
+High-yield targets to add to both scripts:
+- **Baltimore suburbs**: dundalk_md (21222), essex_md (21221), catonsville_md (21228), parkville_md (21234) — area code 410/443
+- **RI**: east_providence_ri (02914), north_providence_ri (02904), johnston_ri (02919) — area code 401
+- **NJ Union/Middlesex**: union_nj (07083), hillside_nj (07205), metuchen_nj (08840), carteret_nj (07008) — area code 908/732
+- **Long Island**: amityville_ny (11701), copiague_ny (11726), medford_ny (11763), ronkonkoma_ny (11779) — area code 631
+- **CT**: derby_ct (06418), seymour_ct (06483), putnam_ct (06260) — area code 203/475
+- **MA North Shore**: winthrop_ma (02152), swampscott_ma (01907), gloucester_ma (01930) — area code 339/617/978
+- **PA**: lebanon_pa (17042), hazleton_pa (18201) — area code 717/570
 
-**Master files:**
-- Index summary: `data/MASTER_friday_packs_index_2026-05-19.csv` (all 103 markets with counts)
-- Combined all-sellable: `data/MASTER_all_friday_packs_combined_2026-05-19.csv` (1,812 leads, grep-friendly)
-- Per-market: `data/friday_pack_<slug>_2026-05-19.csv` (one per market)
+## Market Yield Patterns
+- **Best**: NJ Hudson/Essex/Bergen/Passaic/Monmouth, MA inner Boston ring, FL Orlando/Kissimmee, MD Baltimore
+- **Good**: CT Fairfield/Hartford/New Haven, RI Providence metro, NY Westchester/Long Island
+- **Dead**: Rural Midwest, rural Appalachian TN/VA/WV, rural South
 
-### 30 FULL 50-Packs (sellable)
-
-**Florida (12):** Miami (Aventura/SIB/NMB), Fort Lauderdale, Naples, Fort Myers, Cape Coral, Boca Raton, Delray Beach, Jacksonville, Ocala, Vero Beach, St Petersburg, Clearwater, Bradenton, Cocoa Beach, St Augustine, Tampa Urban — wait counting: Miami, FtL, Naples, FortMyers, CapeCoral, Boca, Delray, Jax, Ocala, VeroBeach, StPete, Clearwater, Bradenton, CocoaBeach, StAug, TampaUrban = 16 FL packs
-
-**Texas (6):** Austin Suburbs, Dallas, Fort Worth, Frisco/Plano, Houston, San Antonio
-
-**Arizona (3):** Phoenix, Scottsdale, Tempe
-
-**Tennessee (1):** Nashville Suburbs (Brentwood/Franklin)
-
-**Nevada (2):** Henderson, Las Vegas
-
-**Louisiana (1):** New Orleans
-
-**Virginia (1):** Northern Virginia (DC suburbs)
-
-### 7 NEAR-50 packs (40-49 leads)
-
-Galveston TX (48), Charlotte NC (47), Mesa AZ (47), Atlanta North GA (45), Sarasota FL (45), Lakeland FL (40), Long Beach CA (40)
-
-### Markets that didn't yield (use different pipeline next time)
-
-**Vacation/resort with thin long-term MLS:** Gulf Shores AL, Gatlinburg TN, Branson MO, Destin FL, Pensacola FL, Outer Banks NC, Hilton Head SC, Key West FL, Marco Island FL, Cape Cod MA, Sedona AZ, Park City UT
-
-**Midwest/traditional secondary markets — weak STR demand:** Madison WI, Milwaukee WI, Minneapolis MN, Grand Rapids MI, Cleveland OH, Cincinnati OH, Columbus OH, Pittsburgh PA, Boise ID, Salt Lake City UT, Provo UT, Spokane WA, Sacramento CA
-
-**Markets that returned 0:** Boise ID, Asheville NC, Salt Lake City UT (2 only), Sacramento CA (1 only), Provo UT (1), Cape Cod MA (1), Burlington VT (2)
-
-### Pattern observed
-- **50/50 STRONG packs** (highest quality, all SFH/duplex named individuals): Austin Suburbs, Cape Coral, Houston, Henderson, Las Vegas, Frisco/Plano, Phoenix
-- **AZ state STR pre-emption** = consistently strong yields (Phoenix, Scottsdale, Tempe sellable; Mesa near-50; Tucson partial)
-- **TX state STR pre-emption** = excellent yields (all 6 TX markets sellable)
-- **FL coastal + suburbs** = excellent yields (16 sellable FL packs)
-- **Coastal vacation MICRO-markets** = pipeline mismatch (need VRBO/MLS-for-sale instead)
-- **Restrictive states** (CA cities mostly, OR, NY) = thin pools, agent-heavy
-
-| Market | Pack file | Strong | Standard | HOA-screen |
-|---|---|---|---|---|
-| **Miami (Aventura / SIB / NMB)** | `friday_pack_miami_fl_2026-05-19_DEDUPED.csv` | 15 | 35 | 0 |
-| **Fort Lauderdale** | `friday_pack_fort_lauderdale_fl_2026-05-19_DEDUPED.csv` | 26 | 23 | 1 |
-| **Scottsdale AZ** | `friday_pack_scottsdale_az_2026-05-19.csv` | 35 | 13 | 2 |
-| **Austin Suburbs TX** | `friday_pack_austin_suburbs_tx_2026-05-19.csv` | 50 | 0 | 0 |
-
-## Markets covered
-
-### Miami (Aventura / Sunny Isles Beach / North Bay Village)
-- **Zips:** 33160, 33180, 33179, 33181, 33141
-- **Raw pull:** 333 unique phones from 948 listings
-- **Why these zips:** Per Sam's 2026-05-14 zoning audit — Miami Beach (33139/33140) excluded entirely, 33161 dropped (3-month min + 4-lease/year cap), 33154 Surfside dropped (3-periods/yr cap). Aventura + SIB + NMB explicitly STR-permissive.
-- **Dedup:** 49 of 50 new vs the existing 66-lead FINAL_PLUS_MANUAL pack from 2026-05-15; topped to 50 from raw source.
-
-### Fort Lauderdale
-- **Zips:** 33301 (downtown), 33304 (Victoria Park), 33305 (East), 33308 (Galt Ocean), 33316 (Las Olas/Harbor Beach)
-- **Raw pull:** 167 unique phones from 460 listings
-- **Why:** STR-permissive citywide; coastal demand pool, FXE airport workforce. Dedup vs broader_fort_lauderdale_fl_2026-05-14.csv = all 50 new.
-
-### Scottsdale AZ
-- **Zips:** 85250, 85251, 85254, 85257, 85258, 85259, 85260
-- **Raw pull:** 109 unique phones from 350 listings
-- **Why:** AZ state pre-empts most local STR bans; Scottsdale requires only registration. Bookings driven by Phoenix Sky Harbor + winter golf demand.
-
-### Austin Suburbs TX (city-of-Austin EXCLUDED)
-- **Zips:** 78613 (Cedar Park), 78664/78665 (Round Rock), 78734 (Lakeway), 78738 (Bee Cave), 78641, 78645
-- **Raw pull:** 183 unique phones from 456 listings
-- **Why suburbs only:** City-of-Austin has a Type 2 STR lottery + cap that effectively bans non-owner-occupied. The suburbs (Williamson + Travis County unincorporated) allow STR with simple registration. SFH-heavy — pack is 50/50 STRONG signals (mostly single-family homes).
-- **DO NOT** scrape Austin city zips (78701-78705) for Friday Pack — wasted leads.
-
-### Gulf Shores AL (partial — 5 leads only)
-- **Zips:** 36542, 36547
-- **Why low yield:** Vacation market. Most properties are owner-occupied or already-Airbnb. For-rent MLS pool is tiny. Need DIFFERENT scrape strategy: VRBO/Airbnb owner backreferences, MLS for-sale of vacation properties, property management company lists.
-
-### Gatlinburg / Sevierville / Pigeon Forge TN (partial — 3 leads only)
-- **Zips:** 37738, 37862, 37863
-- **Same issue:** Smokies vacation rental market — long-term rental MLS is sparse. Need different sourcing.
-
-## Pipeline
-
-1. `scripts/multi_market_homeharvest.py` — pulls for_rent past-30/45 days per market zip list, applies corporate brand + self-STR-competitor filters at scrape time
-2. `scripts/build_market_packs.py` — scores each row (named individual + SFH/duplex hint + absentee area code + rent in band) → top 50/market → outputs `friday_pack_<market>_<date>.csv`
-3. Dedup against existing market files (FINAL packs, prior broader_harvest pulls) → DEDUPED.csv variants
-
-## Lead pack framing (per [[feedback_lead_pack_framing]])
-
-These are **STR-friendly decision-makers**, not "owner-direct skip-traced." Mix of:
-- Owner-direct named individuals (highest density in suburbs)
-- Listing agents who can route to STR-amenable owners
-- Small-portfolio condo owners (HOA-screen on the call)
-
-Customer messaging should say "50 STR-friendly decision-makers in [market]" — not "50 verified owners."
-
-## Honest gaps
-
-- **No Reality Checker pass on these 200 leads** — quality control was heuristic scoring only. Same QC as the prior Miami FINAL_PLUS_MANUAL pack from 2026-05-15. Future iterations could add a Reality Checker spot-check on top 10/market.
-- **Vacation markets need a different pipeline.** HomeHarvest's `for_rent` past-30 covers long-term rental MLS — that's near-empty for Gulf Shores / Gatlinburg / Pigeon Forge. Build a separate scraper for VRBO / Airbnb owner backref pull + MLS for-sale on those.
-- **Austin city of proper was skipped** per regulatory check. If Sam decides Austin city is OK for 30+day-only operators (similar to Tampa), can scrape 78701-78705 separately and ship as a different pack.
-
-## File locations
-
-- Source scrapes: `data/homeharvest_<market>_2026-05-19.csv`
-- Scored packs: `data/friday_pack_<market>_2026-05-19.csv`
-- Deduped (Miami + FtL): `data/friday_pack_<market>_2026-05-19_DEDUPED.csv`
-- Pipeline scripts: `scripts/multi_market_homeharvest.py`, `scripts/build_market_packs.py`
-
-## Related
-
-- [[feedback_homeharvest_pipeline]] — HomeHarvest = best rental scraper
-- [[reference_tampa_hoa_blacklist_2026-05-18]] — auto-FAIL pattern library
-- [[reference_corp_blacklist_2026-05-18]]
-- [[feedback_lead_pack_framing]]
-- [[project_new_markets_2026]] — prior market research (Austin previously eliminated for nightly STR; this revival is for 30+day suburbs only)
+## How to Resume
+```powershell
+cd "C:\Users\samth\projects\landlord-outreach"
+# Scrape one market
+.\.venv\Scripts\python.exe scripts/multi_market_homeharvest.py --market {slug}
+# Build pack
+.\.venv\Scripts\python.exe scripts/build_market_packs.py --market {slug}
+# Batch loop
+$markets = @("m1","m2"); foreach ($m in $markets) { .\.venv\Scripts\python.exe scripts/multi_market_homeharvest.py --market $m }
+```
