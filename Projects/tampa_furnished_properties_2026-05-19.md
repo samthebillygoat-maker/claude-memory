@@ -19,7 +19,7 @@ Sam is in Tampa this week and wants to potentially sign leases. Found via web se
 | 2 | 345 Bayshore Blvd #1212 | 33606 | $2,900 | 1BR/1BA | ✅ building+spa | **(813) 839-5000** | 12th floor bay view, pool/spa/sauna, all utilities, individual owner. |
 | 3 | 2109 Bayshore Blvd #809 | 33606 | $2,150 | 1BR/1BA | ✅ building | See listing | Budget entry, fully furnished + utilities. Unit 103 = 2BR at $3,970. |
 | 4 | 29 Davis Blvd (Davis Islands) | 33606 | $1,450–$2,000 | 1–2BR | ✅ community | **(813) 254-1745** | Only true Davis Islands address found. Mom-and-pop ownership. |
-| 5 | 2608 W Swann Ave #1 | 33609 | $2,600 | 2BR/1BA | ❌ | **(813) 230-7377** | SOHO area, all-inclusive furnished. No pool but great STR location. Agent: Allie McGown (KW Tampa Central) — not owner-direct. |
+| 5 | 2608 W Swann Ave #1 | 33609 | $2,600 | 2BR/1BA | ❌ | **(813) 816-3425** | SOHO area, all-inclusive furnished. No pool but great STR location. Owner/PM: West Knox Group (via TurboTenant). Also agent Allie McGown (KW) at (813) 230-7377. |
 
 ---
 
