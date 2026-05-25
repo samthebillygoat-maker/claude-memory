@@ -71,19 +71,61 @@ Script at: `C:\Users\samth\amazon_cart.py`
 - Mixing bowls ×2
 
 ### Buy Elsewhere
-- **Smart TV ×2** → Best Buy or Costco
+- **Smart TV ×4** → Best Buy open-box (2x 55" living room + 2x 43" bedroom)
+- **TV console ×1** → SUPERJARE 55" rattan cane w/ legs — ordered Amazon ~$87 (living room only, both TVs wall-mounted)
+- **TV mounts ×2** → ordered Amazon
+- **Nightstands** → SUPERJARE rattan set — ordered Amazon
+- **Dining table + chairs ×2 sets** → IKEA (LISABO table + TEODORES chairs x4 per unit)
+- **Rugs ×2** → HomeGoods (8x10, light natural jute/boho, under $160)
+- **Lamps ×4** → HomeGoods (rattan boho, 2 per unit)
+- **Coffee tables ×2** → HomeGoods (48-55" rectangular, light wood/rattan, matches 108" sectional)
 - **Bed frame ×2** → Facebook Marketplace or IKEA
-- **Sofa/sectional ×2** → Facebook Marketplace or IKEA
-- **Dining table + chairs ×2** → Facebook Marketplace or IKEA
-- **Nightstands** → IKEA or Facebook Marketplace
 - **Towels** → Costco (best price/quality ratio)
 - **Pots & pans** → TJ Maxx / HomeGoods (find $150 sets for $40-50)
+
+### Tomorrow Shopping Route (2026-05-25)
+Starting: 14622 Grenadine Dr, Tampa (car pickup)
+1. **Best Buy** — 4x TVs (2x 55" + 2x 43", open-box)
+2. **HomeGoods** — rugs x2, lamps x4, coffee tables x2
+3. **IKEA** — dining tables x2 + chairs x8
+
+Budget: ~$650 TVs + ~$150 rugs + ~$120 lamps + ~$200 coffee tables + ~$500 dining = ~$1,620
 
 ## Estimated Remaining Furnishing Cost
 - Furniture (bed frames, sofa, dining, nightstands): $2,500–4,500
 - TVs ×2: $600–1,000
 - Cookware + towels + misc: $400–600
 - **Total remaining: ~$3,500–6,100**
+
+## Florida DOR Tax Registration — IN PROGRESS
+- Logged in, got to "Sales, Rentals or Repairs of Products" activities page
+- Paused session to install Playwright MCP for Claude to control browser directly
+- **Resume next session**: open new Claude Code session, navigate to taxapps.floridarevenue.com, log in, Claude will use Playwright MCP to fill and submit the form
+- Script saved at: `C:\Users\samth\Downloads\florida_rev2.py` (can also do via Playwright MCP now)
+- Business info: CitySide Stays LLC, EIN 41-5346841, Short-term residential property rental, Disregarded Entity
+
+## Playwright MCP Installed
+- Command used: `claude mcp add playwright npx @playwright/mcp@latest`
+- Saved to: `C:\Users\samth\.claude.json`
+- Next session: Claude can see + control browser directly — no more screenshot workarounds
+
+## Pending — Erik (Landlord)
+- Apt 28 lease NOT signed yet (as of 2026-05-25) — keeps saying "today/sure" but hasn't done it
+- No key given for unit 28 yet
+- 8am text scheduled: ask for lease signature + key, tied to shopping trip deadline
+- AC leak in unit 28 still unresolved — documented in Section 18, 24hr clock starts on written notice
+- If no action within 24hrs of written notice → hire contractor, deduct from rent (no cap per lease)
+
+## Bathroom Upgrade — Both Units
+- Gold theme committed (showerhead, arm, tub spout, overflow cover all ordered)
+- KINLIV 8" brushed gold rainfall showerhead x2 — ordered
+- 90 degree brushed gold shower arm 16" x2 — ordered (includes escutcheon ring)
+- Gold tub spout x2 — ordered
+- Gold tub overflow cover x2 — ordered
+- Existing 3-handle faucet knobs: clean with Barkeeper's Friend, do not replace
+- Ceramic soap dish + towel bar: built into tile, cannot remove, leave as-is (white, neutral)
+- Shower arm may be corroded in wall — try WD-40 + strap wrench; if stuck text Erik (landlord obligation)
+- Teflon tape needed — get at Home Depot tomorrow
 
 ## Decisions Made
 - Queen beds in both bedroom and living room (sofa bed) — not king
