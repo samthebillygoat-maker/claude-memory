@@ -223,6 +223,85 @@ A phase is done only when: (1) `tsc --noEmit` clean, (2) `vitest run` green, (3)
 - Type consistency: `Theme`, `ReelSpec`, `Scene`, `TTSProvider`, `Caption`, `totalFrames(spec,fps)` names used consistently across phases. ✓
 - IP: Phase 0 gate greps for Devini/ReelStack = 0 matches before anything else. ✓
 
+---
+
+# Standout Upgrades — Deep Dive (v1.1 scope, prioritized)
+
+**Core insight:** what makes a reel *perform* is not the template — it's the **hook (first 1.5s), retention pacing, captions, and audio**. v1 (Phases 1–11) ships a clean engine; these phases make the OUTPUT genuinely better and the product hard to compete with. Build in this priority order.
+
+## TIER 1 — makes the reels themselves measurably better (do first)
+
+### Phase 12 — Hook & Retention Engine (highest ROI)
+The single biggest lever. Specs shouldn't have *one* hook — they should have the *best* hook, chosen from variants.
+- **strategist v2**: for each reel, generate **5 hook variants** across proven formulas (negativity/"stop doing X", curiosity gap, big number, contrarian, "nobody tells you"), then self-score each on a rubric (specificity, tension, scroll-stop, ≤7 words) and pick the winner; keep the other 4 as `altHooks` for A/B.
+- **Retention structure**: enforce a beat map — pre-hook (0–0.5s static frame so the thumbnail/loop reads), hook (0–2s), payoff cadence (a new idea every 2–3s), pattern interrupt at ~50%, **seamless loop** ending (last frame ≈ first frame to farm replays).
+- **Open-loop CTA**: CTA scene teases the DM payoff ("the 3 numbers I check") instead of a flat ask.
+- Files: extend `skill/agents/strategist.md` rubric; add `altHooks?: string[]` to spec; add `loop?: boolean` handling in `Reel.tsx` (crossfade tail→head).
+- **QA gate:** qa-critic adds a "hook strength" dimension; fail if winning hook scores <8.
+
+### Phase 13 — High-Retention Captions ("karaoke" word-sync)
+Word-by-word animated captions are the most proven retention booster on Reels/TikTok. v1 captions are basic; make them best-in-class.
+- Word-level timing from Whisper (`@remotion/install-whisper-cpp` returns word timestamps) → **active-word highlight** (accent color/scale pop), 1–3 words on screen at a time, bottom-third safe.
+- Ship **4 caption styles**: Clean, Bold-Box, Highlight-Sweep, Karaoke-Pop. Auto-emphasis: bold the noun/number in each phrase.
+- Auto-emoji injection (optional, off by default — tasteful).
+- Files: rewrite `src/scenes/Captioned.tsx` + `src/audio/captions.ts` (word cues); `captionStyle` on spec.
+- **QA gate:** legibility contrast check (WCAG AA against the frame) + safe-zone validation.
+
+### Phase 14 — Music + Beat-Synced Motion
+Audio is half the reel. Silent card reels lose.
+- Ship a small **CC0/royalty-free music library** (verified licenses, stored in `assets/music/`, NOT copyrighted tracks) tagged by mood (calm/energetic/cinematic/upbeat).
+- **Beat detection** (analyze BPM + onsets via `web-audio-beat-detector` or an ffmpeg/aubio pass) → snap scene cuts and text-pops to the beat grid (productizes Sam's `reelstack-beats` idea, automated).
+- **Audio-reactive accents**: subtle scale/glow pulse on the beat for stat/CTA scenes.
+- Auto-duck music under VO (sidechain-style gain).
+- Files: `src/audio/music.ts` (pick track by mood + loop to length), `src/audio/beats.ts` (beat grid), wire into timing in `src/audio/lock.ts`.
+- **Honesty:** must ship genuinely license-clear music; document each track's license in `assets/music/LICENSES.md`. Do not bundle anything ambiguous.
+
+### Phase 15 — Media Layer (b-roll, screenshots, Ken Burns)
+Top reels mix media; all-typography reels cap out.
+- **Stock media**: Pexels/Pixabay API (free, buyer's key) — fetch relevant photo/video by scene keywords, Ken Burns slow-zoom, themed color-grade overlay so stock matches brand.
+- **Website capture**: headless-Chrome screenshot / scroll-capture of a URL (reuse the approach Sam used: `chrome --headless --screenshot`) for product/SaaS reels.
+- **Image slot**: spec scene `image`/`video` that drops user media with safe framing + grain/tint to stay on-theme.
+- Files: `src/media/stock.ts`, `src/media/capture.ts`, `src/scenes/Media.tsx`.
+- **QA gate:** ensure media never covers caption/CTA safe zones; color-grade applied.
+
+## TIER 2 — scale & differentiation
+
+### Phase 16 — Variation Engine (A/B at scale)
+- `reelforge vary <id> --n 4`: emit N variants (swap winning vs alt hooks, theme, scene order, music mood) for testing which hook/edit wins.
+- `reelforge batch <topics.csv>`: a column of topics → a folder of finished reels.
+- **Repurpose**: `reelforge from <url|transcript.txt>` → strategist chunks a blog post / YouTube transcript / long caption into a 3–6 reel series. This is a killer acquisition feature (creators have content, not time).
+
+### Phase 17 — Brand Fidelity++ (from a URL, go deep)
+- brand-extractor v2 pulls: exact **colors**, **fonts (download + self-host)**, **logo** (favicon/og-image → cleaned mark), product **screenshots**, and a **voice profile** (tone, do/don't words) from the site copy.
+- Auto-generate a **logo lockup** (like the CitySide arch mark) when no logo exists.
+- Output a `brand.json` the buyer can tweak — one source of truth for every reel.
+
+### Phase 18 — Multi-Platform & Localization
+- Per-platform **safe-zone masks** (TikTok caption/UI overlap ≠ Reels ≠ Shorts) baked into render presets, not just aspect ratio.
+- One spec → 9:16 + 1:1 + 16:9 in one command.
+- **Localization**: translate copy (LLM) + regenerate TTS per language → same reel in N languages.
+
+## TIER 3 — later / v2 (don't block launch)
+- **Cloud render** via `@remotion/lambda` for batch speed (consumer CPUs are slow at 30fps+effects; default 30fps, offer Lambda).
+- **Auto-post / scheduling** (Postiz/Buffer/Meta Graph API) + a content-calendar export. High maintenance — v2.
+- **Analytics loop**: log which hook/variant was posted → manual win-rate input → strategist learns. v2.
+- **Theme/template marketplace** (community-contributed themes) — moat + recurring revenue.
+
+## Honest constraints to design around
+- **TTS ceiling:** Kokoro is good-not-ElevenLabs. Make ElevenLabs/OpenAI **first-class optional** (buyer's key) and ship the *best* Kokoro voices as the free default. Voice quality is a top reason a reel feels pro.
+- **Music licensing:** only ship verifiably CC0/licensed tracks; one bad track = takedown. Keep a `LICENSES.md`.
+- **API keys:** stock media + premium voice need buyer keys — make the tool fully functional *without* them (Kokoro + typography), keys unlock extras. Zero-config first run is the demo.
+- **Render time:** budget it; default 30fps, parallel concurrency, Lambda escape hatch. A tool that takes 8 min/reel on a laptop feels broken.
+- **Scope creep:** Tiers 1–2 are the standout. Ship v1 (Phases 0–11) → add Tier 1 (12–15) before charging premium → Tier 2 → Tier 3. Don't build Tier 3 before launch.
+
+## Re-prioritized launch sequence
+1. **MVP to sell ($19):** Phases 0–11 + **Phase 13 (karaoke captions)** + **Phase 14 (music+beat-sync)**. Captions + music are non-negotiable for "good reels" — pull them forward into v1.
+2. **v1.1 (justify $19, drive word-of-mouth):** Phase 12 (hook engine), Phase 15 (media), Phase 16 (repurpose/batch).
+3. **v1.2:** Phase 17 (brand++), Phase 18 (multi-platform/localization).
+4. **v2:** Tier 3.
+
+---
+
 ## Open product decisions (resolve before Phase 10)
 - Final product name + Gumroad handle (working: ReelForge).
 - Premium-voice strategy: ship Kokoro-only free, or bundle an ElevenLabs option behind buyer's own key.
