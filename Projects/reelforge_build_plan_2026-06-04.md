@@ -302,6 +302,36 @@ Top reels mix media; all-typography reels cap out.
 
 ---
 
+---
+
+# Cost & Licensing — can we build/run this for ~$0?
+
+**Yes — $0 fixed cost to build and operate.** The whole stack can be free/open-source and runs on the buyer's machine, so there's no server bill. Per-sale cost is just the payment processor.
+
+| Component | Cost to us | License notes |
+|---|---|---|
+| Dev time | $0 (Claude plan) | — |
+| **Renderer (Remotion)** | $0 *if eligible* | ⚠️ **The one thing to verify.** Remotion is source-available, free for individuals & companies ≤3 people, **but it restricts building/selling products whose purpose is rendering videos** — a paid "Company License" may be required to ship ReelForge commercially. **Confirm before launch.** If restrictive → swap to a free MIT renderer (see below). |
+| TTS — Kokoro | $0 | Apache-2.0, runs locally, no API key |
+| Captions — whisper.cpp | $0 | MIT, local |
+| Fonts — Cormorant/Marcellus/Jost | $0 | SIL Open Font License — free to bundle & embed |
+| Music | $0 | must source **CC0/PD only** (effort, not money); ship `LICENSES.md` |
+| Stock media — Pexels/Pixabay | $0 to us | buyer's free API key |
+| Landing page | $0 | GitHub Pages / Vercel free tier |
+| Domain | ~$10/yr (optional) | not required to launch on Gumroad |
+| **Distribution — Gumroad** | $0 upfront | ~10% + processing per sale (≈ keep ~$16–17 of $19). LemonSqueezy similar; a Stripe page is ~2.9%+30¢ but more setup. |
+
+**Net:** build = free, run = free, ~$16–17 margin per $19 sale. No fixed costs to carry.
+
+### Renderer contingency (kills the only real risk)
+If Remotion's commercial terms aren't clean for a sold product, drop in a free, MIT-licensed renderer — the engine architecture (Theme → Spec → scene components) is renderer-agnostic:
+- **@revideo** — MIT, Remotion-like programmatic video in TS. Closest swap.
+- **Motion Canvas** — MIT, generator-based animation → video.
+- **HTML/CSS + headless-Chrome screenshot-per-frame + ffmpeg** — fully free, total control, more glue code (this is also what powers the avatar/logo capture Sam already used).
+**Action:** Phase 0 must include a 30-min license review of the chosen renderer; default to **@revideo** if Remotion resale isn't permitted, so the product is unambiguously free-to-sell.
+
+---
+
 ## Open product decisions (resolve before Phase 10)
 - Final product name + Gumroad handle (working: ReelForge).
 - Premium-voice strategy: ship Kokoro-only free, or bundle an ElevenLabs option behind buyer's own key.
