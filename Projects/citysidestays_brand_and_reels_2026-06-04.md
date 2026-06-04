@@ -33,7 +33,7 @@ Built a full editorial brand + a 20-reel content engine in `C:\Users\samth\reels
 - **Personal/creator:** "I rent apartments I don't own — and profit 🏠 / STR arbitrage operator · 2 units in Tampa / Comment LEASE for the playbook ↓" → links to the.fridaypack / flip.scout
 
 ## Open items
-- [ ] Pick personal/creator handle → retag 4 arbitrage reels + re-render
+- [x] Personal/creator handle = **@sam.lieberman1** → 4 arbitrage reels retagged + re-rendered + in Downloads (2026-06-04). Guest reels stay @citysidestays.
 - [ ] Pick parent family brand name
 - [ ] Verify all handles available on IG; swap + re-render any taken
 - [x] Reality-check pass — all 20 render clean; hooks + CTAs + handles verified via contact sheets (2026-06-04). All 20 MP4s in `Downloads/citysidestays-batch/`. (FS-FindTheFlip failed once in-batch on a mid-edit race, re-rendered fine.)
