@@ -28,6 +28,12 @@ You CANNOT SEO an individual Airbnb listing URL to Google #1 — Airbnb owns tha
 2. 🔴 "Fast Wi-Fi" edit half-applied (still on homepage) → fixed everywhere.
 Confirmed: build passes, ZERO fabricated reviews/ratings, license real, strategy doc hype-free + honest on timelines.
 
+## Round 2 (continued overnight) — landing pages + assets
+- Built 3 SEO landing pages (build-verified, in working tree): `app/travel-nurse-housing-tampa/`, `app/macdill-tdy-lodging/`, `app/monthly-rentals/` via reusable `components/LandingPage.tsx`. Each: keyword title/meta, 1 H1, H2 sections, FAQ + BreadcrumbList JSON-LD. Honest guardrails held (on-site laundry, real drive times incl Moffitt ~20-25min, 2nd-floor walk-up, no "luxury", no invented price).
+- Added all 3 to `app/sitemap.ts`; **linked them site-wide from `components/Footer.tsx`** (were orphaned).
+- Split FAQPage out of global `JsonLd.tsx` → moved to `components/Faq.tsx` (homepage) so each page has exactly ONE FAQPage matching visible content (Google requirement). Verified clean on fresh build (a stale background `next start` briefly faked a dup during testing — cygwin pkill doesn't kill Windows node; kill port 3000 via PowerShell Get-NetTCPConnection/Stop-Process).
+- Deliverable `LISTING-ASSETS-2026-06-06.md`: Airbnb photo captions (per real photos) + Furnished Finder listing copy (title/description/fields).
+
 ## Sam's next steps (priority order)
 1. **Deploy citysidestays.com to Vercel + domain** (unblocks everything; submit sitemap in GSC).
 2. **List on Furnished Finder** (goldmine for travel nurses; ranks on Google where Airbnb listing never will).
