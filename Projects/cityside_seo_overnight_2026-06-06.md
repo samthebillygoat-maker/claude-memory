@@ -33,6 +33,8 @@ Confirmed: build passes, ZERO fabricated reviews/ratings, license real, strategy
 - Added all 3 to `app/sitemap.ts`; **linked them site-wide from `components/Footer.tsx`** (were orphaned).
 - Split FAQPage out of global `JsonLd.tsx` → moved to `components/Faq.tsx` (homepage) so each page has exactly ONE FAQPage matching visible content (Google requirement). Verified clean on fresh build (a stale background `next start` briefly faked a dup during testing — cygwin pkill doesn't kill Windows node; kill port 3000 via PowerShell Get-NetTCPConnection/Stop-Process).
 - Deliverable `LISTING-ASSETS-2026-06-06.md`: Airbnb photo captions (per real photos) + Furnished Finder listing copy (title/description/fields).
+- Built `/south-tampa-guide` (link-magnet hub, honest local content, BreadcrumbList schema, internal-links all 3 audience pages) → sitemap + footer. Made LandingPage `included`/`faqs` optional + added `relatedLinks`. Build-verified (guide has NO FAQPage, correct). Deliberately SKIPPED `/the-apartment` (would cannibalize homepage intent).
+- ⚠️ FLAG for Sam: `lib/handbook.ts` overclaims "steps from the SoHo strip / North Hyde Park" — unit is west South Tampa, SoHo is a short DRIVE. Soften (noindex page, but accuracy risk). Same walkability trap removed from Airbnb listing.
 
 ## Sam's next steps (priority order)
 1. **Deploy citysidestays.com to Vercel + domain** (unblocks everything; submit sitemap in GSC).
