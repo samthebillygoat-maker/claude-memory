@@ -36,6 +36,9 @@ Confirmed: build passes, ZERO fabricated reviews/ratings, license real, strategy
 - Built `/south-tampa-guide` (link-magnet hub, honest local content, BreadcrumbList schema, internal-links all 3 audience pages) → sitemap + footer. Made LandingPage `included`/`faqs` optional + added `relatedLinks`. Build-verified (guide has NO FAQPage, correct). Deliberately SKIPPED `/the-apartment` (would cannibalize homepage intent).
 - ⚠️ FLAG for Sam: `lib/handbook.ts` overclaims "steps from the SoHo strip / North Hyde Park" — unit is west South Tampa, SoHo is a short DRIVE. Soften (noindex page, but accuracy risk). Same walkability trap removed from Airbnb listing.
 
+## Final Reality-Checker sweep — SHIP-READY
+2nd RC agent audited all 4 new pages + LandingPage + listing-assets vs verified facts + ran build. ZERO must-fix. Walk-vs-drive correct everywhere, sleeps-4 qualified, MacDill disclaims GSA, no invented prices, no fake reviews, FAQ schema gated to visible FAQ. 5 confirm-items resolved via unit photos + conservative defaults: dishwasher TRUE (photo), tub-shower TRUE (photo), coffee=Keurig pods (fixed content.ts "grounds"→"pods"), "blackout curtains"→"soft linen curtains" (unverified), Bayshore superlative removed. Rebuilt green (15/15 static). All cityside-stays changes remain in WORKING TREE (not a git repo) — Sam reviews via MORNING-REPORT-SEO-2026-06-06.md.
+
 ## Sam's next steps (priority order)
 1. **Deploy citysidestays.com to Vercel + domain** (unblocks everything; submit sitemap in GSC).
 2. **List on Furnished Finder** (goldmine for travel nurses; ranks on Google where Airbnb listing never will).
