@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Habits.md",
+                "file": "Areas/About Me.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Habits"
+              "title": "About Me"
             }
           }
         ]
@@ -185,6 +185,9 @@
   },
   "active": "5d51872d0c92a8ad",
   "lastOpenFiles": [
+    "Areas/Customs Business.md",
+    "Areas/Finances.md",
+    "Areas/Habits.md",
     "Areas/Goals.md",
     "Projects/tampa_trip_handoff_2026-05-19.md",
     "MOCs/Cold Outreach.md",
@@ -210,8 +213,6 @@
     "Projects/friday_pack_tracker_v2_PREVIEW_2026-05-15.html",
     "Projects/friday_pack_roi_onepager.md",
     "Projects/coach_intel_tabare_2026-05-14.md",
-    "Projects/build_friday_pack_delivery_v2_2026-05-15.patch.md",
-    "plan_friday_pack_resume_real_leads_2026-05-14.md",
     "Home.md.bak-scrub",
     "Projects/Miami Airbnb Arbitrage.md.bak-scrub",
     "Daily Notes/2026-04-24.md.bak-scrub",
@@ -219,7 +220,6 @@
     "Daily Notes/2026-04-27.md.bak-scrub",
     "Setup/ElevenLabs Cold Calling Setup.md.bak-scrub",
     "Projects/Afroman Agent.md.bak-scrub",
-    "Inbox/2026-04-30_020146_Story_Request.md",
     "Inbox",
     "Untitled 4.canvas",
     "Untitled 3.canvas",
