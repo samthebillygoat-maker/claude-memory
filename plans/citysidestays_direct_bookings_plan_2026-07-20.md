@@ -26,6 +26,6 @@
 
 **Build order:** Phase 1 → Phase 2 (parallel) → Phase 3. First build = Phase 1 booking engine + trust stack.
 
-**Open item before build:** locate the live citysidestays.com source repo (or decide clean rebuild via FLUX FUSION panel).
+**Source located (2026-07-20):** live site = `C:\Users\samth\cityside-stays` (Next.js 14.2.35 App Router + Tailwind v3; deps next/react/resend/sharp; current flow `app/api/inquiry/route.ts` = Resend email). Vercel project `cityside-stays` (prj_Zh5sIT2Nc5vHvoUn38TT0KZzupEr) → citysidestays.com. NOT a git repo yet (`git init` before build). The `~/projects/citysidestays-site` folder is a SEPARATE landlord "Lease Your Property" page — do not edit. NO rebuild needed: add `/api/availability`, `/api/quote`, `/api/book` (Hostaway API + Stripe) beside `/api/inquiry`; front-end date-picker → Stripe checkout. Use FLUX FUSION panel for front-end/design work.
 
 See [[project_cityside_direct_booking_site_2026-06-03]], [[reference_vrbo_hostaway_setup_2026-07-20]].
