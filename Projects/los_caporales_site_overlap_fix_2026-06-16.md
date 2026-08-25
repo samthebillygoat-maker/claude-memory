@@ -1,70 +1,89 @@
 ---
-title: Los Caporales Site — Hero Overlap Fix (QUEUED for laptop)
+title: Los Caporales — Hero Overlap Fix (CORRECTED 2026-08-25)
 date: 2026-06-16
-tags: [project, builds-operator, websites, los-caporales, todo, fix]
-status: PENDING — apply on laptop, then redeploy to Vercel
+corrected: 2026-08-25
+tags: [project, los-caporales, websites, bug, fix]
+status: BUG STILL OPEN — but my original diagnosis was WRONG, see correction
 ---
 
-# Los Caporales Site — Hero Button Overlap (fix queued)
+# Los Caporales — Hero Button Overlap
 
-**Site:** https://los-caporales.vercel.app
-**Business:** Los Caporales — Taqueria / Mexican Food, 1316 Railroad Ave, Livermore
-**Source file (laptop):** `C:\Users\samth\projects\builds-operator\data\mocks\los-caporales\index.html`
-(single self-contained HTML file — inline CSS/JS, no framework)
+## ⚠️ CORRECTION (2026-08-25) — read this before the section below
 
-## The bug (seen 2026-06-16, mobile screenshot)
-In the hero section, the red **"CALL TO ORDER"** button is overlapping the
-**"OPEN DAILY · 9:30PM"** text and the **"★ 4.3 · 550+ REVIEWS"** / **address**
-lines below it. The button and the hours/rating/address text are stacking on
-top of each other instead of sitting in a clean vertical stack — clearly visible
-on a phone-width viewport.
+The first version of this note was written against **stale, ~2-month-old context**
+and its "where the file lives" section was **wrong**. Do not act on it.
 
-## Why it's almost certainly happening
-Typical cause in these single-file hero layouts (one of these):
-- The hours / rating / address line is **absolutely positioned** (or pulled up
-  with a **negative margin**) and collides with the CTA button row on narrow screens.
-- The hero content box has a **fixed height** and the content **overflows** on mobile.
-- The CTA row is a flex row with **no `flex-wrap` / no `gap`**, so items pile up.
+**What I originally assumed (WRONG):**
+> single self-contained `index.html` with inline CSS at
+> `builds-operator\data\mocks\los-caporales\index.html`
 
-## The fix (for laptop-Claude — do this with the real file open)
-1. Open the index.html for `los-caporales` and find the hero CTA block (the
-   `CALL TO ORDER` / `VIEW THE MENU` buttons + the `OPEN DAILY`, reviews, and
-   address lines).
-2. Wrap the buttons + hours + rating + address in a **single vertical flex
-   column** and let it flow naturally:
-   ```css
-   .hero-cta {            /* whatever the actual wrapper is */
-     display: flex;
-     flex-direction: column;
-     align-items: flex-start;   /* or center, match the design */
-     gap: 14px;
-     position: static;          /* kill any absolute positioning */
-   }
-   .hero-cta .btn-row {
-     display: flex;
-     flex-wrap: wrap;           /* buttons wrap instead of overlapping */
-     gap: 12px;
-   }
-   ```
-3. Remove any `position: absolute` / negative `margin-top` on the hours,
-   reviews, or address lines that pulls them up under the button.
-4. Remove any fixed `height` on the hero content container — use `min-height`
-   so it grows with content.
-5. Add a mobile guard so it always stacks on small screens:
-   ```css
-   @media (max-width: 600px) {
-     .hero-cta { width: 100%; }
-     .hero-cta .btn-row { flex-direction: column; align-items: stretch; }
-     .hero-cta .btn-row a { width: 100%; text-align: center; }
-   }
-   ```
-6. Verify at 390px width (iPhone) — no overlap, clean vertical stack:
-   headline → subtext → buttons → OPEN DAILY · hours → ★ rating → address.
-7. Redeploy: `vercel deploy data/mocks --prod --yes` (or whatever the
-   builds-operator deploy step is) so los-caporales.vercel.app updates.
+**What is actually true**, per the vault's own daily notes for 2026-08-17/18/19:
+Los Caporales is now a **full Next.js application**, not a static mock. Evidence —
+these files appear as created/edited in those notes:
+- `page.tsx`, `layout.tsx`, `globals.css`, `next.config.ts`, `not-found.tsx`
+- `site-header.tsx`, `hero-slideshow.tsx`, `menu-browser.tsx`, `chat-widget.tsx`
+- `checkout-client.tsx`, `status-client.tsx`, `tablet-client.tsx`
+- `hours.ts`, `i18n.ts`, `robots.ts`, `sitemap.ts`, `route.ts`
 
-## Note
-Exact class names will differ in the real file — match the actual markup.
-The principle: get the buttons and the hours/rating/address into one normal-flow
-vertical stack with gaps, and kill any absolute positioning / negative margins /
-fixed heights that are causing the collision.
+Plus a real backend: **Neon Postgres** (`DATABASE_URL`, `create_caporales_db.js`,
+DB-backed menu), **Stripe checkout** (`STRIPE-GO-LIVE.md`), online ordering
+(`project_caporales_ordering_build_2026-08-17.md`), deployed to **Vercel prod**,
+with a vitest suite.
+
+It started life as a builds-operator mock — slug
+`los-caporales-taqueria-1st-street-livermore-ca`, one of the 12 Livermore downtown
+walk-in builds — but it has since become a **paid client project**. Per the
+2026-08-19 note: *"he payed me first half yesterday, i want it fully done today so
+i can go in tmw and collect other half."*
+
+**So the hero markup is almost certainly in `hero-slideshow.tsx` / `site-header.tsx`
+/ `page.tsx`, styled via `globals.css` (+ likely Tailwind) — NOT an inline `<style>`
+block in a static file.**
+
+## Laptop docs that already exist — READ THESE FIRST
+
+Created 2026-08-19, on the laptop, **not committed to this vault**:
+- `DOMAIN-CUTOVER.md` ← **the new domain is documented here**
+- `README-PRINT.md`, `panel-print-brief.md` ← **print/QR work may already be decided**
+- `HANDOFF.md`, `OWNER-GUIDE.md`, `STRIPE-GO-LIVE.md`, `panel-site-review.md`
+
+Do not re-decide anything these already settle.
+
+## The bug (still real — screenshot 2026-06-16, mobile)
+
+In the hero, the red **"CALL TO ORDER"** button overlaps the **"OPEN DAILY · 9:30PM"**
+text and the **"★ 4.3 · 550+ REVIEWS"** / **address** lines beneath it. Confirmed
+visually from a phone screenshot; not yet re-confirmed against the current
+deployment.
+
+**First step for whoever picks this up: re-check the live site.** Given ~2 months of
+heavy work since the screenshot, this may already be fixed. Verify before fixing.
+
+## Fix approach (if still present)
+
+Principle is unchanged; the location is not. Get the CTA buttons and the
+hours/rating/address into **one normal-flow vertical stack with gaps**, and remove
+whatever is causing the collision — typically `position: absolute`, a negative
+`margin-top`, or a fixed `height` on the hero container that overflows on mobile.
+
+In a Tailwind/Next component that usually means:
+- the CTA wrapper → `flex flex-col items-start gap-3.5` (drop any `absolute`)
+- the button row → `flex flex-wrap gap-3`
+- hero container → `min-h-*` instead of a fixed `h-*`
+- mobile → buttons go full width and stack: `w-full sm:w-auto`
+
+Target order at 390px width, no overlap:
+headline → subtext → buttons → OPEN DAILY · hours → ★ rating → address.
+
+## Separate issue — honesty check on "★ 4.3 · 550+ REVIEWS"
+
+Builds Operator's hard rule is no fabricated ratings/reviews. If that figure is not
+pulled from the real Google listing, it must go. **Unverified either way** — flag it
+during the same pass. On a paying client's live ordering site this matters more than
+it did on a spec mock.
+
+## Why this wasn't fixed from the cloud session
+
+Sandbox egress blocks `los-caporales.vercel.app` and the source is on the laptop.
+Both the site fix and the QR code were also gated on the new domain, which is in
+`DOMAIN-CUTOVER.md` — on the laptop, not in this vault.
